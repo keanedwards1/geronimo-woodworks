@@ -59,8 +59,5 @@
       "src": "/images/(.*)",
       "dest": "/images/$1"
     }
-  ],
-  "ignore": [
-    "archive/**"
   ]
 }

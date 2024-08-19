@@ -1,0 +1,29 @@
+.
+├── about.html
+├── archive
+│   ├── 1.png
+│   ├── 2.png
+│   ├── 3.png
+│   ├── 4.png
+│   ├── Screenshot 2024-08-19 at 1.17.08 PM.png
+│   ├── about.png
+│   ├── cabinets.png
+│   └── fine_furniture.png
+├── cabinets.html
+├── css
+│   └── styles.css
+├── fine_furniture.html
+├── images
+│   ├── about-old.png
+│   ├── about.png
+│   ├── cabinets-old.png
+│   ├── cabinets.png
+│   ├── fine_furniture-og.png
+│   └── fine_furniture.png
+├── index.html
+├── js
+│   └── main.js
+├── tree.txt
+└── vercel.json
+
+5 directories, 22 files
