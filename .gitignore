@@ -67,18 +67,6 @@ pip-delete-this-directory.txt
 .tox/
 .coverage
 
-# Java
-*.class
-*.jar
-*.war
-*.ear
-*.iml
-*.ipr
-*.iws
-*.class
-target/
-build/
-
 # Ruby
 *.gem
 *.rbc
@@ -114,25 +102,6 @@ Cargo.lock
 # Haskell
 dist/
 .stack-work/
-
-# Web
-*.html
-*.css
-*.scss
-*.sass
-*.less
-*.js
-*.jsx
-*.ts
-*.tsx
-*.map
-
-# Images
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.svg
 
 # Archives
 *.zip
