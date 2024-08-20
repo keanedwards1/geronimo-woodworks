@@ -176,3 +176,31 @@ footer {
     opacity: 0.5;
     cursor: default;
   }
+
+  .home-gallery {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.fine-furniture {
+    order: -1; /* This puts it on top for mobile layouts */
+}
+
+@media (min-width: 768px) {
+    .home-gallery {
+        flex-direction: row;
+    }
+
+    .cabinets {
+        order: 1;
+    }
+
+    .fine-furniture {
+        order: 2;
+    }
+
+    .about {
+        order: 3;
+    }
+}
