@@ -107,7 +107,7 @@ footer {
 }
 .gallery-scroll {
     display: flex;
-    transition: transform 0.3s cubic-bezier(0.2, 0, 0.5, 1);
+    transition: transform 0.25s cubic-bezier(0.2, 0, 0.5, 1);
 }
 
 .gallery-scroll.single-item {
