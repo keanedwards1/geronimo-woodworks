@@ -94,3 +94,75 @@ footer {
         flex-basis: 100%;
     }
 }
+
+.gallery-container {
+    width: 100%;
+    padding: 50px 0;
+}
+.gallery-group {
+    width: calc(100% - 100px);
+    margin: 0 auto 50px;
+    position: relative;
+    overflow: hidden;
+}
+.gallery-scroll {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+.gallery-item-wrapper {
+    flex: 0 0 auto;
+    width: calc(90% - 20px);
+    margin: 0 40px;
+    aspect-ratio: 16 / 9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #f4eee3;
+    border-radius: 0.3rem;
+}
+.gallery-item {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 0.3rem;
+}
+.gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(46, 46, 46);
+    font-size: 30px;
+    font-weight: 100;
+    padding: 10px;
+    text-decoration: none;
+    z-index: 10;
+}
+.gallery-nav.prev { left: 10px; }
+.gallery-nav.next { right: 10px; }
+/*         .gallery-nav:hover {
+} */
+@media (max-width: 768px) {
+    .gallery-group {
+        width: calc(100% - 40px);
+    }
+    .gallery-item-wrapper {
+        width: calc(100% - 20px);
+    }
+}
+
+.gallery-nav i {
+    transform: scale(1, 1.0);  /* This makes the icon skinnier vertically */
+    display: inline-block;  /* Needed for the transform to work */
+  }
+  
+  /* Optional: adjust size if needed */
+  .gallery-nav i {
+    font-size: 28px;  /* Adjust this value to change the overall size */
+  }
+  
+  /* Optional: add some styling to the links */
+  .gallery-nav {
+    text-decoration: none;
+    padding: 10px;  /* Add some padding for easier clicking */
+  }
