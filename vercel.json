@@ -2,62 +2,30 @@
   "version": 2,
   "builds": [
     {
-      "src": "index.html",
+      "src": "*.html",
       "use": "@vercel/static"
     },
     {
-      "src": "about.html",
+      "src": "css/**/*.css",
       "use": "@vercel/static"
     },
     {
-      "src": "cabinets.html",
+      "src": "js/**/*.js",
       "use": "@vercel/static"
     },
     {
-      "src": "fine_furniture.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "css/styles.css",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "js/main.js",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "images/*",
+      "src": "images/**/*",
       "use": "@vercel/static"
     }
   ],
   "routes": [
-    {
-      "src": "/",
-      "dest": "/index.html"
-    },
-    {
-      "src": "/about",
-      "dest": "/about.html"
-    },
-    {
-      "src": "/cabinets",
-      "dest": "/cabinets.html"
-    },
-    {
-      "src": "/fine_furniture",
-      "dest": "/fine_furniture.html"
-    },
-    {
-      "src": "/css/(.*)",
-      "dest": "/css/$1"
-    },
-    {
-      "src": "/js/(.*)",
-      "dest": "/js/$1"
-    },
-    {
-      "src": "/images/(.*)",
-      "dest": "/images/$1"
-    }
+    { "src": "/", "dest": "/index.html" },
+    { "src": "/about", "dest": "/about.html" },
+    { "src": "/cabinets", "dest": "/cabinets.html" },
+    { "src": "/fine_furniture", "dest": "/fine_furniture.html" },
+    { "src": "/css/(.*)", "dest": "/css/$1" },
+    { "src": "/js/(.*)", "dest": "/js/$1" },
+    { "src": "/images/(.*)", "dest": "/images/$1" },
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }
