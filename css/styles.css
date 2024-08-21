@@ -23,8 +23,8 @@ header {
 header h1 {
     margin: 0;
     /* Reverting to original styles - adjust as needed */
-    font-size: 24px; /* Adjust this value to match your original size */
-    font-weight: normal;
+    font-size: 26px; /* Adjust this value to match your original size */
+    font-weight: 400;
 }
 
 header h1 a {
