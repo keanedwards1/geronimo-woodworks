@@ -8,26 +8,47 @@
 ├── images
 │   ├── about-historic
 │   │   ├── archive-photos
-│   │   │   ├── michael-bock-80s-desk-with-carpet.jpg
-│   │   │   ├── michael-bock-cabinets.jpeg
-│   │   │   ├── michael-bock-cherry-desk.jpg
-│   │   │   ├── michael-bock-desk-corner-of-room.jpg
+│   │   │   ├── michael-bock-beams.jpg
+│   │   │   ├── michael-bock-big-desk-back.jpg
+│   │   │   ├── michael-bock-big-desk-front.jpg
+│   │   │   ├── michael-bock-blank-and-white-table.jpg
+│   │   │   ├── michael-bock-chair-plus-shop-detail.JPG
 │   │   │   ├── michael-bock-desk-drawers.jpg
-│   │   │   ├── michael-bock-desk-in-grass.jpg
-│   │   │   ├── michael-bock-desk-left-angle.jpg
-│   │   │   ├── michael-bock-fine-woodworking.jpg
-│   │   │   ├── michael-bock-old-desk.jpg
-│   │   │   ├── michael-bock-rocking-chair-design.jpg
-│   │   │   ├── michael-bock-rocking-chair-side.JPG
-│   │   │   ├── michael-bock-rocking-chair.JPG
-│   │   │   ├── michael-bock-rocking-chairs.jpg
-│   │   │   ├── michael-bock-shop-and-rocking-chair.JPG
-│   │   │   ├── michael-bock-shop-detail.jpg
-│   │   │   ├── michael-bock-woodworking-closeup.JPG
+│   │   │   ├── michael-bock-desk-outside.jpg
+│   │   │   ├── michael-bock-desk-shining.jpg
+│   │   │   ├── michael-bock-desk-sleek.jpg
+│   │   │   ├── michael-bock-doing-carpentry.jpg
+│   │   │   ├── michael-bock-dresser.JPG.jpeg
+│   │   │   ├── michael-bock-kitchen-chair-right.JPG
+│   │   │   ├── michael-bock-kitchen-chair-side.JPG
+│   │   │   ├── michael-bock-kitchen-chair.JPG
+│   │   │   ├── michael-bock-kitchen-table.jpg
+│   │   │   ├── michael-bock-kitchen.jpg
+│   │   │   ├── michael-bock-planning-rocking-chair.jpg
+│   │   │   ├── michael-bock-rocking-chair-main.JPG
+│   │   │   ├── michael-bock-stool-detail.JPG
+│   │   │   ├── michael-bock-stool.JPG
+│   │   │   ├── michael-bock-table-on-carpet.jpg
+│   │   │   ├── michael-bock-table-with-chair.JPG
+│   │   │   ├── michael-bock-two-vintage-chairs.jpg
+│   │   │   ├── michael-bock-vintage-chairs.JPG
+│   │   │   ├── michael-bock-vintage-couch.JPG
+│   │   │   ├── michael-bock-vintage-desk-table.JPG
+│   │   │   ├── michael-bock-vintage-drawer-detail.JPG
+│   │   │   ├── michael-bock-vintage-table.JPG
+│   │   │   ├── michael-bock-vintage-woodworking.JPG
+│   │   │   ├── michael-bock-woodworking-present-side.JPG
+│   │   │   ├── michael-bock-woodworking-present.JPG
 │   │   │   ├── michael-bock-woodworking-tools.JPG
+│   │   │   ├── michael-bock-woodworking-upclose.JPG
 │   │   │   ├── michael-bock-woodworking.jpg
-│   │   │   ├── michale-bock-kitchen.jpg
-│   │   │   └── young-michael-bock-woodworking.jpg
+│   │   │   └── michael-bock-young.JPG
+│   │   ├── article
+│   │   │   ├── IMG_3070.JPG
+│   │   │   ├── IMG_3071.JPG
+│   │   │   ├── IMG_3072.JPG
+│   │   │   ├── IMG_3073.JPG
+│   │   │   └── IMG_3074.JPG
 │   │   └── michael-portrait.png
 │   ├── about.png
 │   ├── cabinetry
@@ -40,9 +61,6 @@
 │   │   │   ├── michael-bock-pantry.JPG
 │   │   │   ├── michael-bock-storage.jpg
 │   │   │   └── michael-bock-stoveside.jpg
-│   │   ├── bed:dresser
-│   │   │   ├── michael-bock-dresser-left.jpg
-│   │   │   └── michael-bock-dresser-right.jpg
 │   │   ├── deer-run
 │   │   │   ├── michael-bock-cabinets-left.JPG
 │   │   │   ├── michael-bock-cabinets.JPG
@@ -51,8 +69,6 @@
 │   │   │   └── michael-bock-stairs.JPG
 │   │   ├── gina-smith
 │   │   │   └── micahel-bock-bookshelf.JPG
-│   │   ├── joes-office
-│   │   │   └── michael-bock-office.jpeg
 │   │   ├── meadow-way-gate
 │   │   ├── menlo-park
 │   │   │   ├── michael-bock-cabinets.JPG
@@ -67,40 +83,38 @@
 │   │   │   ├── michael-bock-cabinets.JPG
 │   │   │   └── michael-bock-kitchen.JPG
 │   │   ├── misc
+│   │   │   ├── michael-bock-bar-woodork.jpg
+│   │   │   ├── michael-bock-bar.jpg
 │   │   │   ├── michael-bock-cabinets.jpg
+│   │   │   ├── michael-bock-closet.jpeg
+│   │   │   ├── michael-bock-dresser-left.jpg
+│   │   │   ├── michael-bock-dresser-right.jpg
 │   │   │   ├── michael-bock-kitchen-table.jpg
-│   │   │   └── michael-bock-kitchen.png
+│   │   │   ├── michael-bock-kitchen.png
+│   │   │   └── michael-bock-office.jpeg
 │   │   ├── pop-up-trailer-remodel
 │   │   │   ├── michael-bock-trailer-cabinets.jpeg
 │   │   │   └── michael-bock-trailer.jpeg
-│   │   ├── sauls-kitchen
-│   │   │   ├── michael-bock-bar-woodork.jpg
-│   │   │   └── michael-bock-bar.jpg
-│   │   ├── van
-│   │   │   ├── micael-bock-van-closeup.jpeg
-│   │   │   ├── micael-bock-van.jpeg
-│   │   │   └── michael-bock-van-drawers.jpeg
-│   │   └── yuri-closet
-│   │       └── michael-bock-closet.jpeg
+│   │   └── van
+│   │       ├── micael-bock-van-closeup.jpeg
+│   │       ├── micael-bock-van.jpeg
+│   │       └── michael-bock-van-drawers.jpeg
 │   ├── cabinets.png
 │   ├── fine-furniture
-│   │   ├── 100_0266.JPG
 │   │   ├── box-and-treen
 │   │   │   ├── michael-bock-box-top.JPG
 │   │   │   ├── michael-bock-box.JPG
 │   │   │   ├── michael-bock-cheese-knife-on-cutting-board.JPG
 │   │   │   ├── michael-bock-cheese-knife-packaged.JPG
 │   │   │   ├── michael-bock-cheese-knife.jpg
-│   │   │   ├── michael-bock-cheese-knives-hanging.JPG
 │   │   │   ├── michael-bock-coat-hanger-on-floor.JPG
 │   │   │   ├── michael-bock-coat-hanger.JPG
 │   │   │   ├── michael-bock-cutting-boards.JPG
-│   │   │   ├── michael-bock-dark-cheese-knives-2.JPG
 │   │   │   ├── michael-bock-dark-cheese-knives.JPG
 │   │   │   ├── michael-bock-leaf-cutting-board.JPG
 │   │   │   ├── michael-bock-long-cutting-boards.JPG
 │   │   │   ├── michael-bock-pie-scooper.jpg
-│   │   │   └── michael-bock-pie-scoopers.JPG
+│   │   │   └── michael-bock-stump-side-table.JPG
 │   │   ├── butterfly-desk
 │   │   │   ├── michael-bock-butterfly-desk-back.JPG
 │   │   │   ├── michael-bock-butterfly-desk-detail.JPG
@@ -118,58 +132,68 @@
 │   │   │   ├── michael-bock-cherry-desk.jpg
 │   │   │   └── michael-bock-with-cherry-desk.jpg
 │   │   ├── chris-rocker
+│   │   │   ├── michael-bock-cushion-rocker-back.JPG
+│   │   │   ├── michael-bock-cushion-rocker-front.JPG
+│   │   │   ├── michael-bock-cushion-rocker-right.JPG
+│   │   │   ├── michael-bock-cushion-rocker.JPG
 │   │   │   ├── michael-bock-rocking-chair-back.JPG
 │   │   │   ├── michael-bock-rocking-chair-left.JPG
 │   │   │   └── michael-bock-rocking-chair-right.JPG
 │   │   ├── cuban-mahogany-bookcase
 │   │   │   ├── michael-bock-cuban-mahogany-bookcase-left.JPG
 │   │   │   └── michael-bock-cuban-mahogany-bookcase.JPG
-│   │   ├── cushion-rocker
-│   │   │   ├── michael-bock-cushion-rocker-back.JPG
-│   │   │   ├── michael-bock-cushion-rocker-front.JPG
-│   │   │   ├── michael-bock-cushion-rocker-right.JPG
-│   │   │   └── michael-bock-cushion-rocker.JPG
 │   │   ├── details
+│   │   │   ├── michael-bock-chair-detail.JPG
 │   │   │   ├── michael-bock-desk-base.jpg
+│   │   │   ├── michael-bock-dresser-detail.JPG
 │   │   │   ├── michael-bock-dresser-drawer.jpeg
-│   │   │   └── michael-bock-orig-rocking-chair-detail.JPG
-│   │   ├── doors
+│   │   │   ├── michael-bock-dresser-left.JPG
+│   │   │   ├── michael-bock-orig-rocking-chair-detail.JPG
+│   │   │   ├── michael-bock-step-stool.JPG
+│   │   │   └── michael-bock-table-detail.JPG
+│   │   ├── gates-and-doors
 │   │   │   ├── michael-bock-door-tree-detail.jpg
 │   │   │   ├── michael-bock-door-under-construction.jpg
-│   │   │   ├── michael-bock-gather-doors.jpeg
-│   │   │   ├── michael-bock-pantry-doors.JPG
-│   │   │   └── michael-bock-patio-doors.JPG
-│   │   ├── gates
 │   │   │   ├── michael-bock-double-gate-side.JPG
 │   │   │   ├── michael-bock-double-gate-with-sun-ray.jpeg
 │   │   │   ├── michael-bock-double-gate.JPG
 │   │   │   ├── michael-bock-gate-under-construction.jpeg
 │   │   │   ├── michael-bock-gate-with-circular-detail-2.JPG
 │   │   │   ├── michael-bock-gate-with-circular-detail.JPG
-│   │   │   └── michael-bock-gate-with-dog.JPG
+│   │   │   ├── michael-bock-gate-with-dog.JPG
+│   │   │   ├── michael-bock-gather-doors.jpeg
+│   │   │   ├── michael-bock-pantry-doors.JPG
+│   │   │   └── michael-bock-patio-doors.JPG
 │   │   ├── koa-rocker
 │   │   │   ├── michael-bock-koa-rocking-chair-back.JPG
 │   │   │   ├── michael-bock-koa-rocking-chair-side.JPG
 │   │   │   └── michael-bock-koa-rocking-chair.JPG
 │   │   ├── maple-rocker
-│   │   │   ├── 6d614206d7a9485c89d65dd6aa8e89e3.mov
-│   │   │   ├── michael-bock-maple-rocking-chair-front.jpeg
-│   │   │   ├── michael-bock-maple-rocking-chair-left-top.jpeg
-│   │   │   ├── michael-bock-maple-rocking-chair-left.jpeg
-│   │   │   ├── michael-bock-maple-rocking-chair-top.jpeg
-│   │   │   ├── michael-bock-maple-rocking-chair-varnished-left.jpeg
-│   │   │   └── michael-bock-maple-rocking-chair-varnished.jpeg
+│   │   │   ├── archived
+│   │   │   │   ├── 6d614206d7a9485c89d65dd6aa8e89e3.mov
+│   │   │   │   ├── michael-bock-maple-rocking-chair-front.jpeg
+│   │   │   │   ├── michael-bock-maple-rocking-chair-left-top.jpeg
+│   │   │   │   ├── michael-bock-maple-rocking-chair-left.jpeg
+│   │   │   │   ├── michael-bock-maple-rocking-chair-top.jpeg
+│   │   │   │   ├── michael-bock-maple-rocking-chair-varnished-left.jpeg
+│   │   │   │   └── michael-bock-maple-rocking-chair-varnished.jpeg
+│   │   │   ├── michael-bock-maple-rocking-chair-back-closeup.JPG
+│   │   │   ├── michael-bock-maple-rocking-chair-back.JPG
+│   │   │   ├── michael-bock-maple-rocking-chair-front.JPG
+│   │   │   ├── michael-bock-maple-rocking-chair-side.JPG
+│   │   │   └── michael-bock-maple-rocking-chair-top.JPG
 │   │   ├── slab-table
 │   │   │   ├── micahel-bock-slab-table.JPG
 │   │   │   └── michael-bock-slab-table-finished.jpg
-│   │   ├── stump-and-side-table
-│   │   │   └── michael-bock-stump-side-table.JPG
 │   │   ├── walnut-rocker
+│   │   │   ├── michael-bock-rocking-chair-display.jpg
 │   │   │   ├── michael-bock-walnut-rockers.jpg
 │   │   │   └── michael-bock-walnut-rocking-chair.jpeg
 │   │   └── yuri-table-and-chairs
 │   │       └── michael-bock-beautiful-table.jpeg
-│   └── fine_furniture.png
+│   ├── fine_furniture.png
+│   ├── michael-bock-logo.png
+│   └── michael-bock-logo1.png
 ├── index.html
 ├── js
 │   ├── gallery.js
@@ -177,4 +201,4 @@
 ├── tree.txt
 └── vercel.json
 
-38 directories, 140 files
+33 directories, 169 files

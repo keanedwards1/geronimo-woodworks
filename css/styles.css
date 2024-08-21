@@ -1,3 +1,4 @@
+/* Body styles (keeping your existing styles) */
 body {
     font-family: 'Lato', 'Roboto', sans-serif;
     margin: 0;
@@ -7,18 +8,56 @@ body {
     line-height: 1.6;
 }
 
+/* Sticky Header with original text styles */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #ffffff;
+    padding: 15px 5%;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    /* Reverting to original styles - adjust as needed */
+    font-size: 24px; /* Adjust this value to match your original size */
+    font-weight: normal;
+}
+
 header h1 a {
     text-decoration: none;
     color: inherit;
 }
 
+/* Keeping the circle style */
 .circle {
-    color: rgba(32, 53, 127, 0.759);
+    display: inline-block;
+    margin: 0 0.4em;
 }
 
-header {
-    text-align: center;
-    padding: 1rem 1rem 1.2rem 1rem;
+/* Scrolled header style */
+header.scrolled {
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 10px 5%;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    header {
+        padding: 10px 5%;
+    }
+
+    header h1 {
+        font-size: 20px; /* Adjust this value for mobile if needed */
+    }
+}
+
+.circle {
+    color: rgba(32, 53, 127, 0.759);
 }
 
 h1 {
@@ -134,42 +173,39 @@ footer {
     max-width: 100%;
     max-height: 100%;
     object-fit:contain;
-    border-radius: px;
+    border-radius: 4px;
 }
+/* Existing styles with modifications */
 .gallery-nav {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    color: rgb(130, 130, 130);
-    font-size: 30px;
+    color: rgb(84, 84, 84);
+    font-size: 24px; /* Reduced from 30px */
     font-weight: 100;
-    padding: 10px;
+    padding: 10px 5px; /* Reduced horizontal padding */
     text-decoration: none;
     z-index: 10;
+    width: 20px; /* Added to make arrows skinnier */
+    text-align: center; /* Center the icon */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    border-radius: 10px;
 }
-/* a.gallery-nav.next {
-    width: 50px;
-    margin-right: -10px;
-} */
-.gallery-nav i {
-    transform: scale(1, 1.0);
-    display: inline-block; 
-}
-  
-  .gallery-nav {
-    text-decoration: none;
-    padding: 10px;
-  }
 
-  .gallery-nav.disabled {
+.gallery-nav i {
+    transform: scale(0.8, 1.0); /* Slightly compress horizontally */
+    display: inline-block;
+}
+
+.gallery-nav.disabled {
     opacity: 0;
     cursor: default;
-  }
+}
 
-.gallery-nav.prev { left: -10px; }
-.gallery-nav.next { right: -10px; }
-/*         .gallery-nav:hover {
-} */
+.gallery-nav.prev { left: 0; }
+.gallery-nav.next { right: 0; }
+
+
 @media (max-width: 768px) {
     .gallery-container {
         display: flex;
@@ -185,11 +221,12 @@ footer {
         margin: 0 0 30px;
     }
     .gallery-nav {
-        font-size: 26px;
+        font-size: 24px; /* Further reduced for mobile */
         opacity: 0.7;
+        width: 20px; /* Skinnier on mobile */
     }
     .gallery-nav.disabled {
-        opacity: 0.4;
+        opacity: 0;
     }
 /*     .gallery-nav.prev { left: 40px; }
     .gallery-nav.next { right: 40px; } */
