@@ -143,7 +143,7 @@ footer {
     flex-direction: column;
 }
 .gallery-group {
-    width: calc(100% - 100px);
+    width: calc(100% - 400px);
     margin: 0 auto 50px;
     position: relative;
     overflow: hidden;
@@ -158,9 +158,10 @@ footer {
 }
 .gallery-item-wrapper {
     flex: 0 0 auto;
-    width: calc(100% - 80px);  /* Adjusted to account for margins */
+    width: calc(100% - 80px);
     margin: 0 40px;
-    aspect-ratio: 16 / 9;
+    /* aspect-ratio: 16 / 9; */
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
