@@ -193,12 +193,15 @@
 │   │       └── michael-bock-beautiful-table.jpeg
 │   ├── fine_furniture.png
 │   ├── michael-bock-logo.png
-│   └── michael-bock-logo1.png
+│   ├── michael-bock-logo1.png
+│   └── social
+│       └── intagram-logo.svg
 ├── index.html
 ├── js
 │   ├── gallery.js
-│   └── main.js
+│   ├── main.js
+│   └── sticky-header.js
 ├── tree.txt
 └── vercel.json
 
-33 directories, 169 files
+34 directories, 171 files
