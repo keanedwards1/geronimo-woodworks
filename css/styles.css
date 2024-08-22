@@ -169,7 +169,12 @@ footer {
     overflow: hidden;
     background-color: #f4eee3;
     border-radius: 0.3rem;
+    transition: opacity 0.3s ease-in-out;
 }
+
+/* .gallery-item-wrapper:hover {
+    opacity: 0.4;
+} */
 
 .gallery-item {
     max-width: 100%;
@@ -295,7 +300,8 @@ footer {
     opacity: 0.7;
     transition: transform 0.7s ease;
     width: 20px;
-    margin-left: -4px;
+    margin-right: -100px;
+    margin-left: 100px;
   }
   
   .footer-icon img:hover {
