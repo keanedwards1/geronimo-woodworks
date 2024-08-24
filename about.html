@@ -1,25 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Michael Bock • About</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="css/styles.css">
-        <script src="js/main.js" defer></script>
-        <link rel="icon" type="image/png" href="/images/michael-bock-logo1.png">
-    </head>
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Bock • About</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/about-styles.css">
+    <script src="js/main.js" defer></script>
+    <link rel="icon" type="image/png" href="/images/michael-bock-logo1.png">
+</head>
 <body>
-
     <header>
-        <h1><a href="/">MICHAEL BOCK <span class="circle">•</span> ABOUT / ARCHIVAL WORK</a></h1>
+        <h1>
+            <a href="/" class="header-content">
+                <span class="top-line">MICHAEL BOCK <span class="circle home-circle">•</span></span>
+                <span class="bottom-line">HISTORIC</span>
+            </a>
+            <a class="footer-icon header-icon" target="_blank" rel="noopener" href="https://www.instagram.com/geronimoww2/">
+                <img src="/images/social/intagram-logo.svg" alt="Instagram">
+            </a>
+        </h1>
     </header>
 
-    <script defer src="js/sticky-header.js"></script>
+    <nav class="section-nav">
+        <ul>
+            <li><a href="#about" class="active">About</a></li>
+            <li><a href="#craft">Craft</a></li>
+            <li><a href="#legacy">Legacy</a></li>
+            <li><a href="#inspiration">Inspiration</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#video">Video</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
+    <main class="snap-container">
+        <section id="about" class="snap-section">
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <h1>About Michael Bock</h1>
+                    <p>about</p>
+                    <p>Email:</p>
+                </div>
+                <div class="image-content">
+                    <img src="/images/about-historic/archive-photos/michael-bock-woodworking.webp" alt="Michael Bock in his workshop">
+                </div>
+            </div>
+        </section>
+
+        <section id="craft" class="snap-section">
+            <div class="content-wrapper reverse">
+                <div class="text-content">
+                    <h2>The Craft of Restoration</h2>
+                    <p>more</p>
+                </div>
+                <div class="image-content">
+                    <img src="/images/about-historic/archive-photos/michael-bock-doing-carpentry.webp" alt="Michael Bock working on a piece">
+                </div>
+            </div>
+        </section>
+
+        <!-- Add more sections following this pattern -->
+
+        <section id="video" class="snap-section">
+            <div class="content-wrapper">
+                <div class="text-content">
+                    <h2>Our Craft in Action</h2>
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <p>popsicles</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="snap-section">
+            <div class="content-wrapper reverse">
+                <div class="text-content">
+                    <h2>Get in Touch</h2>
+                    <p>blah blah blah</p>
+                    <a href="mailto:info@michaelbockhistoric.com" class="contact-button">Email Us</a>
+                </div>
+                <div class="image-content">
+                    <img src="/images/about-historic/archive-photos/michael-bock-chair-plus-shop-detail.webp" alt="A restored chair in Michael Bock's workshop">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 1989 Michael Bock • Geronimo Woodworks. All rights reserved.</p>
+        <div class="footer-icons">
+            <a class="footer-icon" target="_blank" rel="noopener" href="https://www.instagram.com/geronimoww2/">
+              <img src="/images/social/intagram-logo.svg" alt="Instagram"></a>    
+          </div>
+    </footer>
+
+    <script src="js/parallax.js" defer></script>
 </body>
 </html>
