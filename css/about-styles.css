@@ -1,4 +1,9 @@
 /* About page specific styles */
+main {
+    max-width: 100% !important;
+    padding: 0 !important;
+}
+
 body {
     font-family: 'Lato', 'Roboto', sans-serif;
     margin: 0;
@@ -6,6 +11,7 @@ body {
     background-color: #ffffff;
     color: #333333;
     line-height: 1.6;
+    font-weight: 300;
 }
 
 .section-nav {
@@ -62,6 +68,51 @@ body {
 
 .snap-container {
     height: 100vh;
+    width: 100%;
+}
+
+.snap-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.black {
+    position: relative;
+    width: 100%;
+    background-color: rgb(10, 10, 10);
+    color: white;
+}
+
+.black::before {
+    content: '';
+    position: absolute;
+    top: -5vh; /* This extends the gradient up by one viewport height */
+    left: 0;
+    right: 0;
+    height: 5vh; /* This makes the gradient one viewport height tall */
+    background: linear-gradient(to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(10, 10, 10, 0.1) 20%,
+    rgba(10, 10, 10, 0.2) 30%,
+    rgba(10, 10, 10, 0.3) 40%,
+    rgba(10, 10, 10, 0.4) 50%,
+    rgba(10, 10, 10, 0.5) 60%,
+    rgba(10, 10, 10, 0.6) 70%,
+    rgba(10, 10, 10, 0.8) 80%,
+    rgba(10, 10, 10, 0.9) 90%,
+    rgba(10, 10, 10, 1) 100%);
+    pointer-events: none; /* This allows clicks to pass through to elements below */
+}
+
+.black > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* .snap-container {
+    height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
 }
@@ -72,11 +123,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} */
 
 .content-wrapper {
     display: flex;
-    width: 80%;
+    width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -94,12 +145,11 @@ body {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 5px;
 }
 
 h1, h2 {
     font-family: 'Roboto', sans-serif;
-    color: #20357f;
     margin-bottom: 20px;
 }
 
@@ -114,23 +164,29 @@ h2 {
 }
 
 p {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 20px;
 }
 
+footer p {
+    font-size: 0.8rem;
+}
+
 .contact-button {
     display: inline-block;
-    padding: 10px 20px;
-    background-color: #20357f;
-    color: #fff;
+    padding: 7px 20px;
+    background-color: rgb(236, 236, 236);
+    color: rgb(10, 10, 10);
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: all 0.4s ease;
 }
 
 .contact-button:hover {
-    background-color: #152554;
+    transform: scale(1.03);
+    background-color: #ffffff;
 }
 
 .video-container {
@@ -140,14 +196,16 @@ p {
     overflow: hidden;
     max-width: 100%;
     margin: 30px 0;
+    border-radius: 5px;
+    display: flex;
 }
 
 .video-container iframe {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
 }
 
 /* Responsive design */
@@ -170,5 +228,49 @@ p {
 
     p {
         font-size: 1rem;
+    }
+}
+
+
+
+/* about */
+
+/* New styles for the about section */
+#about .content-wrapper {
+    margin-top: -100px;
+    align-items: stretch; /* Ensures both children stretch to fill the container height */
+}
+
+#about .image-content {
+    flex: 0 0 65%; /* This sets the width to 65% and prevents growing or shrinking */
+}
+
+#about .text-content {
+    flex: 1; /* This allows the text content to take up the remaining space */
+    padding-left: 20px; /* Adds some space between the image and text */
+}
+
+#about .image-content img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This ensures the image covers the entire div without distortion */
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    #about .content-wrapper {
+        margin-top: 0;
+        flex-direction: column;
+    }
+
+    #about .image-content,
+    #about .text-content {
+        flex: 1 0 auto; /* Reset flex properties for mobile */
+        width: 100%;
+    }
+
+    #about .text-content {
+        padding-left: 0;
+        padding-top: 20px;
     }
 }

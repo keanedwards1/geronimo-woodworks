@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+/* document.addEventListener('DOMContentLoaded', function() {
     const sections = document.querySelectorAll('.snap-section');
     const navLinks = document.querySelectorAll('.section-nav a');
     const snapContainer = document.querySelector('.snap-container');
@@ -30,4 +30,4 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initial call to set correct active link on page load
     updateActiveLink();
-});
+}); */
