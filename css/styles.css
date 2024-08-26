@@ -1,3 +1,5 @@
+/* css/styles.css */
+
 /* Body styles (keeping your existing styles) */
 body {
     font-family: 'Lato', 'Roboto', sans-serif;
@@ -8,11 +10,10 @@ body {
     line-height: 1.6;
 }
 
-/* Sticky Header with original text styles */
 header {
-    position: sticky;
+    position: sticky !important;
     top: 0;
-    z-index: 1000;
+    z-index: 10000;
     background-color: #ffffff;
     padding: 25px 5% 20px 5%;
     border-bottom: 1px solid #f0f0f0;
@@ -22,8 +23,7 @@ header {
 
 header h1 {
     margin: 0;
-    /* Reverting to original styles - adjust as needed */
-    font-size: 26px; /* Adjust this value to match your original size */
+    font-size: 26px;
     font-weight: 400;
 }
 

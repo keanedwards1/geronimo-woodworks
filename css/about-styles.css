@@ -1,7 +1,14 @@
-/* About page specific styles */
+/* css/about-styles.css */
+
 main {
     max-width: 100% !important;
     padding: 0 !important;
+    position: relative;
+    z-index: 1;
+}
+
+body, main, .black {
+    overflow: visible;
 }
 
 body {
@@ -12,58 +19,6 @@ body {
     color: #333333;
     line-height: 1.6;
     font-weight: 300;
-}
-
-.section-nav {
-    position: fixed;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    z-index: 1000;
-}
-
-.section-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.section-nav li {
-    margin: 15px 0;
-}
-
-.section-nav a {
-    display: block;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #ccc;
-    transition: all 0.3s ease;
-    position: relative;
-}
-
-.section-nav a:hover,
-.section-nav a.active {
-    background-color: #20357f;
-}
-
-.section-nav a::after {
-    content: attr(href);
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    white-space: nowrap;
-    background-color: #20357f;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 3px;
-    font-size: 14px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.section-nav a:hover::after {
-    opacity: 1;
 }
 
 .snap-container {
@@ -83,47 +38,30 @@ body {
     width: 100%;
     background-color: rgb(10, 10, 10);
     color: white;
+    z-index: 1; /* Reduce the z-index here */
 }
 
 .black::before {
     content: '';
     position: absolute;
-    top: -5vh; /* This extends the gradient up by one viewport height */
+    top: -5vh;
     left: 0;
     right: 0;
-    height: 5vh; /* This makes the gradient one viewport height tall */
+    height: 5vh;
     background: linear-gradient(to bottom,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(10, 10, 10, 0.1) 20%,
-    rgba(10, 10, 10, 0.2) 30%,
-    rgba(10, 10, 10, 0.3) 40%,
-    rgba(10, 10, 10, 0.4) 50%,
-    rgba(10, 10, 10, 0.5) 60%,
-    rgba(10, 10, 10, 0.6) 70%,
-    rgba(10, 10, 10, 0.8) 80%,
-    rgba(10, 10, 10, 0.9) 90%,
-    rgba(10, 10, 10, 1) 100%);
-    pointer-events: none; /* This allows clicks to pass through to elements below */
+        rgba(255, 255, 255, 0) 0%,
+        rgba(10, 10, 10, 0.1) 20%,
+        rgba(10, 10, 10, 0.2) 30%,
+        rgba(10, 10, 10, 0.3) 40%,
+        rgba(10, 10, 10, 0.4) 50%,
+        rgba(10, 10, 10, 0.5) 60%,
+        rgba(10, 10, 10, 0.6) 70%,
+        rgba(10, 10, 10, 0.8) 80%,
+        rgba(10, 10, 10, 0.9) 90%,
+        rgba(10, 10, 10, 1) 100%);
+    pointer-events: none;
+    z-index: -1; /* Place it behind the content of .black */
 }
-
-.black > * {
-    position: relative;
-    z-index: 1;
-}
-
-/* .snap-container {
-    height: 100vh;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-}
-
-.snap-section {
-    height: 100vh;
-    scroll-snap-align: start;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-} */
 
 .content-wrapper {
     display: flex;
@@ -170,6 +108,58 @@ p {
     margin-bottom: 20px;
 }
 
+.text-content h2 {
+    font-size: 2.4rem;
+    font-weight: 200;
+    color: #e3ded9; /* Light gray for contrast */
+    letter-spacing: 2px; /* Slightly more letter spacing for a luxury feel */
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(123, 72, 5, 0.3); /* Soft glow effect */
+    transition: text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.text-content p {
+    font-size: 1.2rem;
+    color: #cccccc; /* Softer gray for readability */
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-shadow: 0 0 8px rgba(123, 72, 5, 0.2); /* Subtle glow for readability */
+    transition: color 1.0s ease, text-shadow 1.0s ease;
+}
+
+/* Hover effect */
+.text-content h2:hover {
+    text-shadow: 0 0 20px rgba(123, 72, 5, 0.4); /* Intensified glow on hover */
+    transform: scale(1.01px); /* Subtle lift on hover */
+}
+
+.text-content p:hover {
+    color: #ffffff; /* Brighten the text on hover */
+    text-shadow: 0 0 15px rgba(123, 72, 5, 0.3); /* Brighter glow on hover */
+}
+
+
+
+.parallax-image-container {
+    height: 70vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.parallax-image {
+    background-image: url("/images/about-historic/archive-photos/michael-bock-blank-and-white-table.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%; /* Ensure it covers the container's full height */
+    width: 100%;
+    background-attachment: fixed; /* Creates the parallax effect */
+}
+
+
+
 footer p {
     font-size: 0.8rem;
 }
@@ -204,8 +194,12 @@ footer p {
     position: absolute;
     top: 0;
     left: 0;
-    width: 90%;
+    width: 100%;
     height: 90%;
+}
+
+.video-caption {
+    margin-top: -50px;
 }
 
 /* Responsive design */
@@ -245,7 +239,7 @@ footer p {
     flex: 0 0 65%; /* This sets the width to 65% and prevents growing or shrinking */
 }
 
-#about .text-content {
+#about .top-text-content {
     flex: 1; /* This allows the text content to take up the remaining space */
     padding-left: 20px; /* Adds some space between the image and text */
 }
@@ -264,12 +258,12 @@ footer p {
     }
 
     #about .image-content,
-    #about .text-content {
+    #about .top-text-content {
         flex: 1 0 auto; /* Reset flex properties for mobile */
         width: 100%;
     }
 
-    #about .text-content {
+    #about .top-text-content {
         padding-left: 0;
         padding-top: 20px;
     }
