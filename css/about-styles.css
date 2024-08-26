@@ -72,7 +72,27 @@ body {
         rgba(10, 10, 10, 0.9) 90%,
         rgba(10, 10, 10, 1) 100%);
     pointer-events: none;
-    z-index: -1; /* Place it behind the content of .black */
+    z-index: -1; 
+}
+
+.text-content h2 {
+    font-size: 2.4rem;
+    font-weight: 200;
+    color: #e3ded9; 
+    letter-spacing: 2px; 
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(123, 72, 5, 0.3); 
+    transition: text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.text-content p {
+    font-size: 1.2rem;
+    color: #cccccc; 
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-shadow: 0 0 8px rgba(123, 72, 5, 0.2); 
+    transition: color 1.0s ease, text-shadow 1.0s ease;
 }
 
 .content-wrapper {
@@ -118,26 +138,6 @@ p {
     font-size: 1.1rem;
     line-height: 1.6;
     margin-bottom: 20px;
-}
-
-.text-content h2 {
-    font-size: 2.4rem;
-    font-weight: 200;
-    color: #e3ded9; /* Light gray for contrast */
-    letter-spacing: 2px; /* Slightly more letter spacing for a luxury feel */
-    text-transform: uppercase;
-    margin-bottom: 20px;
-    text-shadow: 0 0 10px rgba(123, 72, 5, 0.3); /* Soft glow effect */
-    transition: text-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.text-content p {
-    font-size: 1.2rem;
-    color: #cccccc; /* Softer gray for readability */
-    line-height: 1.8;
-    margin-bottom: 20px;
-    text-shadow: 0 0 8px rgba(123, 72, 5, 0.2); /* Subtle glow for readability */
-    transition: color 1.0s ease, text-shadow 1.0s ease;
 }
 
 /* Hover effect */
