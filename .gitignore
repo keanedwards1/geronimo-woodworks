@@ -1,5 +1,9 @@
-# Ignore the /archive folder
+# Ignore all archive folders
 /archive/
+**/archive/
+
+# Ignore .psd files
+*.psd
 
 # Node.js
 node_modules/
@@ -153,3 +157,4 @@ dist/
 
 # Custom ignore patterns
 /archive/
+**/archive/
