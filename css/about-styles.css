@@ -48,18 +48,19 @@ body {
 .black {
     position: relative;
     width: 100%;
-    background-color: rgb(10, 10, 10);
+    background-color: rgba(80, 80, 80, 0.74);
+    background-color: rgba(75, 72, 69, 0.74);
     color: white;
     z-index: 1; /* Reduce the z-index here */
 }
 
-.black::before {
+/* .black::before {
     content: '';
     position: absolute;
-    top: -5vh;
+    top: -2vh;
     left: 0;
     right: 0;
-    height: 5vh;
+    height: 2vh;
     background: linear-gradient(to bottom,
         rgba(255, 255, 255, 0) 0%,
         rgba(10, 10, 10, 0.1) 20%,
@@ -73,7 +74,7 @@ body {
         rgba(10, 10, 10, 1) 100%);
     pointer-events: none;
     z-index: -1; 
-}
+} */
 
 .text-content h2 {
     font-size: 2.4rem;
@@ -119,7 +120,7 @@ body {
 }
 
 h1, h2 {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Lato', 'Roboto', sans-serif;
     margin-bottom: 20px;
 }
 
@@ -161,7 +162,7 @@ p {
 }
 
 .parallax-image {
-    background-image: url("/images/about-historic/archive-photos/michael-bock-blank-and-white-table.webp");
+    background-image: url("/images/about-historic/archive-photos/desk-series/michael-bock-blank-and-white-table.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -282,7 +283,7 @@ footer p {
 }
 
 #about .image-content {
-    flex: 0 0 65%; /* This sets the width to 65% and prevents growing or shrinking */
+    flex: 0 0 50%; /* This sets the width to 65% and prevents growing or shrinking */
 }
 
 #about .top-text-content {

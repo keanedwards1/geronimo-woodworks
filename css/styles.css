@@ -23,8 +23,8 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 26px;
-    font-weight: 400;
+    font-size: 30px;
+    font-weight: 300;
 }
 
 header h1 a {
@@ -79,7 +79,7 @@ header.scrolled {
 }
 
 h1 {
-    font-family: 'Roboto', 'Lato', sans-serif;
+    font-family: 'Lato', 'Roboto', sans-serif;
     font-weight: 200;
     font-size: 2.1rem;
     color: #666666;
@@ -389,7 +389,11 @@ footer {
 
   /* Header Instagram Icon */
 
-  @media (min-width: 812px) {
+  .header-icon img {
+    margin-left: 15px;
+  }
+
+  @media (min-width: 1200px) {
     .header-icon img {
         margin-right: -100px;
         margin-left: 100px;
@@ -399,5 +403,6 @@ footer {
   @media (max-width: 768px) {
     .header-icon img {
         margin-bottom: -2px;
+        margin-left: 0px;
     }
   }
