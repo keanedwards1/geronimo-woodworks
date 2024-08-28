@@ -135,6 +135,10 @@ body {
     width: 100%;
 }
 
+.text-content .contact-header {
+    text-align: center !important;
+}
+
 h1, h2 {
     font-family: 'Lato', 'Roboto', sans-serif;
     margin-bottom: 20px;
@@ -187,10 +191,13 @@ p {
     background-attachment: fixed; /* Creates the parallax effect */
 }
 
-
+footer {
+    margin-top: 100px;
+}
 
 footer p {
     font-size: 0.8rem;
+    color: rgb(232, 232, 232);
 }
 
 .contact-button {
