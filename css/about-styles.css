@@ -108,6 +108,7 @@ body {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+    gap: 40px;
 }
 
 .content-wrapper.reverse {
@@ -311,6 +312,24 @@ footer p {
     align-items: center;
     justify-content: center;
     z-index: 1000
+}
+
+@media (max-width: 600px) {
+    .video-content-wrapper {
+        width: 90%;
+    }
+
+    .video-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center
+    }
+
+    .video-container {
+        width: 100%;
+        border-radius: 10px;
+    }
 }
 
 .video-container iframe {
