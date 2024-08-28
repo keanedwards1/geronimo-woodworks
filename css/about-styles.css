@@ -230,6 +230,7 @@ footer p {
     position: relative;
     background-color: #fdfdfd;
     margin-top: 20px;
+    margin-left: 18px;
     font-size: 12px;
     color: #000000;
     padding: 2px 4px;
@@ -250,6 +251,7 @@ footer p {
 @media (max-width: 768px) {
     .tooltip {
         align-self: center;
+        margin-left: 0px;
     }
 
     .contact-button {
