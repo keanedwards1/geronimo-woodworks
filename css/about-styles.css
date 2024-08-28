@@ -27,6 +27,7 @@ body {
 
 .snap-container {
     width: 100%;
+    overflow: hidden;
 }
 
 .snap-section {
@@ -409,5 +410,35 @@ footer p {
     #about .top-text-content {
         padding-left: 0;
         padding-top: 20px;
+    }
+}
+
+.gallery-nav a {
+    color: #fcfcfc;
+    color: white;
+}
+
+.fas {
+    color: #fcfcfc;
+    color: white;
+}
+
+.gallery-item-wrapper {
+    background-color: #202020;
+}
+
+.gallery-group h2 {
+    text-align: center;
+}
+
+@media (max-width: 1200px) {
+    #video {
+        margin-top: 70px;
+    }
+}
+
+@media (max-width: 768px) {
+    #video {
+        margin-top: 0px;
     }
 }
