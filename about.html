@@ -81,7 +81,7 @@
             </section>
 
             <div class="parallax-image-container">
-                <div class="parallax-image"></div>
+                <div class="parallax-image-1"></div>
                 <div class="content">
                 </div>
             </div>
@@ -123,7 +123,7 @@
             </section>
 
             <div class="parallax-image-container">
-                <div class="parallax-image"></div>
+                <div class="parallax-image-2"></div>
                 <div class="content">
                 </div>
             </div>
@@ -281,21 +281,6 @@
             </div>
             </div>
 
-            <section id="video" class="snap-section">
-                    <div class="video-content-wrapper">
-                        <h2>Building The Workshop</h2>
-                        <div class="video-wrapper">
-                            <div class="video-container">
-                                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Q2KxzyyuLuM?si=r7wTNxaLvLlUWQHi" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-                            </div>
-                            <div class="video-container">
-                                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/aBeZoZTG53M?si=60130OOFqcGrV_4q" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
-                            </div>
-                        </div>
-<!--                         <p class="video-caption">popsicles</p>
- -->                    </div>
-            </section>
-
 <!--             <div class="video-container">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
             </div>
@@ -328,6 +313,21 @@
                 </div>
             </section>
 
+            <section id="video" class="snap-section">
+                <div class="video-content-wrapper">
+                    <h2>Building The Workshop</h2>
+                    <div class="video-wrapper">
+                        <div class="video-container">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Q2KxzyyuLuM?si=r7wTNxaLvLlUWQHi" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                        </div>
+                        <div class="video-container">
+                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/aBeZoZTG53M?si=60130OOFqcGrV_4q" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+                        </div>
+                    </div>
+<!--                         <p class="video-caption">popsicles</p>
+-->                    </div>
+        </section>
+
             <section id="craft" class="snap-section">
                 <div class="content-wrapper reverse">
                     <div class="text-content">
@@ -352,7 +352,19 @@
                 </div>
             </section>
 
-            <br>
+            <section id="video" class="snap-section">
+                <div class="video-two-content-wrapper">
+                    <h2>Vocational Docuseries</h2>
+                    <div class="video-two-wrapper">
+                        <div class="video-two-container">
+<!--                             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Q2KxzyyuLuM?si=r7wTNxaLvLlUWQHi" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+ -->                            <iframe src="https://www.youtube.com/embed/poG0WE4gGC8?si=5LcCkhDqBOrMVrhX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                    </div>
+<!--                     <iframe width="560" height="315" src="https://www.youtube.com/embed/poG0WE4gGC8?si=5LcCkhDqBOrMVrhX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+ --><!--                         <p class="video-caption">popsicles</p>
+-->                    </div>
+        </section>
 
             <section id="craft" class="snap-section">
                 <div class="content-wrapper reverse">
@@ -378,6 +390,15 @@
                 </div>
             </section>
 
+            <div class="article-container">
+                <img id="articleImage" class="article-image" src="/api/placeholder/800/600" alt="Article page">
+                <div class="navigation">
+                    <button id="prevBtn" onclick="changePage(-1)">Previous</button>
+                    <span id="pageNumber">Page 1 of 5</span>
+                    <button id="nextBtn" onclick="changePage(1)">Next</button>
+                </div>
+            </div>
+
             <section id="contact" class="snap-section contact-section">
                 <div class="content-wrapper reverse">
                     <div class="image-content">
@@ -395,7 +416,7 @@
             <footer>
                 <p>&copy; 1989 Michael Bock • Geronimo Woodworks. All rights reserved.</p>
                 <div class="footer-icons">
-                    <a class="footer-icon" target="_blank" rel="noopener" href="https://www.instagram.com/geronimoww2/">
+                    <a class="footer-icon footer-icon-bottom" target="_blank" rel="noopener" href="https://www.instagram.com/geronimoww2/">
                     <img src="/images/social/intagram-logo.svg" alt="Instagram"></a>    
                 </div>
             </footer>
@@ -407,6 +428,7 @@
     <script src="js/copy-email.js" defer></script>
     <script defer src="js/gallery.js"></script>
     <script defer src="js/improved-image-loading.js"></script>
+    <script src="js/article.js" defer></script>
 
 
 </body>

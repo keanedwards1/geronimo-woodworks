@@ -56,13 +56,13 @@ body {
     position: relative;
     width: 100%;
     background-color: rgba(80, 80, 80, 0.74);
-    background-color: rgba(75, 72, 69, 0.74);
     background-color: rgb(14, 14, 14);
+    background-color: rgba(75, 72, 69, 0.74);
     color: white;
     z-index: 1; /* Reduce the z-index here */
 }
 
-.black::before {
+/* .black::before {
     content: '';
     position: absolute;
     top: -2vh;
@@ -80,6 +80,30 @@ body {
         rgba(10, 10, 10, 0.8) 80%,
         rgba(10, 10, 10, 0.9) 90%,
         rgba(10, 10, 10, 1) 100%);
+    pointer-events: none;
+    z-index: -1; 
+} */
+
+.black::before {
+    content: '';
+    position: absolute;
+    top: -2vh;
+    left: 0;
+    right: 0;
+    height: 2vh;
+    background: linear-gradient(
+        to bottom,
+        rgba(75, 72, 69, 0) 0%,
+        rgba(75, 72, 69, 0.074) 20%,
+        rgba(75, 72, 69, 0.148) 30%,
+        rgba(75, 72, 69, 0.222) 40%,
+        rgba(75, 72, 69, 0.296) 50%,
+        rgba(75, 72, 69, 0.37) 60%,
+        rgba(75, 72, 69, 0.444) 70%,
+        rgba(75, 72, 69, 0.592) 80%,
+        rgba(75, 72, 69, 0.666) 90%,
+        rgba(75, 72, 69, 0.74) 100%
+    );
     pointer-events: none;
     z-index: -1; 
 }
@@ -189,8 +213,18 @@ p {
     overflow: hidden;
 }
 
-.parallax-image {
+.parallax-image-1 {
     background-image: url("/images/about-historic/archive-photos/desk-series/michael-bock-blank-and-white-table.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%; /* Ensure it covers the container's full height */
+    width: 100%;
+    background-attachment: fixed; /* Creates the parallax effect */
+}
+
+.parallax-image-2 {
+    background-image: url("/images/about-historic/archive-photos/parallax-photos/5.webp");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -289,6 +323,15 @@ footer p {
     position: relative;
 }
 
+.video-two-content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
 .video-wrapper {
     width: 100%;
     height: 100%;
@@ -297,6 +340,14 @@ footer p {
     align-items: center;
     flex-direction: row;
     gap: 30px;
+}
+
+.video-two-wrapper {
+    width: max-content;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 @media (max-width: 1200px) {
@@ -316,6 +367,68 @@ footer p {
     justify-content: center;
     z-index: 1000
 }
+
+.video-container iframe {
+    border-radius: 6px;
+}
+
+.video-two-container {
+    height: max-content;
+    width: max-content;
+}
+
+/* Base style for larger screens */
+.video-two-container iframe {
+    width: 1120px;
+    height: 630px;
+    border-radius: 10px;
+}
+
+/* For screens smaller than 1200px */
+@media screen and (max-width: 1199px) {
+    .video-two-container iframe {
+        width: 960px;
+        height: 540px;
+        border-radius: 8px;
+    }
+}
+
+/* For screens smaller than 992px */
+@media screen and (max-width: 991px) {
+    .video-two-container iframe {
+        width: 800px;
+        height: 450px;
+        border-radius: 8px;
+    }
+}
+
+/* For screens smaller than 768px */
+@media screen and (max-width: 767px) {
+    .video-two-container iframe {
+        width: 640px;
+        height: 360px;
+        border-radius: 6px;
+    }
+}
+
+/* For screens smaller than 576px */
+@media screen and (max-width: 575px) {
+    .video-two-container iframe {
+        width: 480px;
+        height: 270px;
+        border-radius: 4px;
+    }
+}
+
+/* For screens smaller than 480px (very small devices) */
+@media screen and (max-width: 479px) {
+    .video-two-container iframe {
+        width: 320px;
+        height: 180px;
+        border-radius: 4px;
+    }
+}
+
 
 @media (max-width: 600px) {
     .video-content-wrapper {
@@ -425,6 +538,7 @@ footer p {
 
 .gallery-item-wrapper {
     background-color: #202020;
+    background-color: rgb(104, 103, 101);
 }
 
 .gallery-group h2 {
@@ -441,4 +555,53 @@ footer p {
     #video {
         margin-top: 0px;
     }
+}
+
+.article-container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.article-image {
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+}
+.navigation {
+    margin-top: 20px;
+}
+#pageNumber {
+    color: #e3ded9;
+    padding: 20px;
+}
+#prevBtn, #nextBtn {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    align-self: flex-start;
+    position: relative;
+    display: inline-block;
+    padding: 7px 20px;
+    background-color: rgb(236, 236, 236);
+    color: rgb(10, 10, 10);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.4s ease;
+    font-family: 'Lato', 'Roboto', sans-serif !important;
+    font-weight: 200;
+    font-size: 1.0rem;
+}
+
+#prevBtn:hover, #nextBtn:hover  {
+    transform: scale(1.03);
+    background-color: #ffffff;
+}
+
+.footer-icon-button {
+    color: white;
 }

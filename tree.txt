@@ -5,53 +5,150 @@
 ├── convert-r.py
 ├── convert.py
 ├── css
+│   ├── about-styles.css
 │   └── styles.css
 ├── fine_furniture.html
 ├── images
 │   ├── about-historic
 │   │   ├── archive-photos
-│   │   │   ├── michael-bock-beams.webp
-│   │   │   ├── michael-bock-big-desk-back.webp
-│   │   │   ├── michael-bock-big-desk-front.webp
-│   │   │   ├── michael-bock-blank-and-white-table.webp
-│   │   │   ├── michael-bock-chair-plus-shop-detail.webp
-│   │   │   ├── michael-bock-desk-drawers.webp
-│   │   │   ├── michael-bock-desk-outside.webp
-│   │   │   ├── michael-bock-desk-shining.webp
-│   │   │   ├── michael-bock-desk-sleek.webp
-│   │   │   ├── michael-bock-doing-carpentry.webp
-│   │   │   ├── michael-bock-dresser.JPG.webp
-│   │   │   ├── michael-bock-kitchen-chair-right.webp
-│   │   │   ├── michael-bock-kitchen-chair-side.webp
-│   │   │   ├── michael-bock-kitchen-chair.webp
-│   │   │   ├── michael-bock-kitchen-table.webp
-│   │   │   ├── michael-bock-kitchen.webp
-│   │   │   ├── michael-bock-planning-rocking-chair.webp
-│   │   │   ├── michael-bock-rocking-chair-main.webp
-│   │   │   ├── michael-bock-stool-detail.webp
-│   │   │   ├── michael-bock-stool.webp
-│   │   │   ├── michael-bock-table-on-carpet.webp
-│   │   │   ├── michael-bock-table-with-chair.webp
-│   │   │   ├── michael-bock-two-vintage-chairs.webp
-│   │   │   ├── michael-bock-vintage-chairs.webp
-│   │   │   ├── michael-bock-vintage-couch.webp
-│   │   │   ├── michael-bock-vintage-desk-table.webp
-│   │   │   ├── michael-bock-vintage-drawer-detail.webp
-│   │   │   ├── michael-bock-vintage-table.webp
-│   │   │   ├── michael-bock-vintage-woodworking.webp
-│   │   │   ├── michael-bock-woodworking-present-side.webp
-│   │   │   ├── michael-bock-woodworking-present.webp
-│   │   │   ├── michael-bock-woodworking-tools.webp
-│   │   │   ├── michael-bock-woodworking-upclose.webp
-│   │   │   ├── michael-bock-woodworking.webp
-│   │   │   └── michael-bock-young.webp
+│   │   │   ├── chairs-and-rocking-chairs
+│   │   │   │   ├── IMG_3183.webp
+│   │   │   │   ├── IMG_3197.webp
+│   │   │   │   ├── IMG_3199.webp
+│   │   │   │   ├── michael-bock-chair-plus-shop-detail.webp
+│   │   │   │   ├── michael-bock-kitchen-chair-right.webp
+│   │   │   │   ├── michael-bock-kitchen-chair-side.webp
+│   │   │   │   ├── michael-bock-kitchen-chair.webp
+│   │   │   │   ├── michael-bock-rocking-chair-main.webp
+│   │   │   │   ├── michael-bock-stool-detail.webp
+│   │   │   │   ├── michael-bock-stool.webp
+│   │   │   │   ├── michael-bock-two-vintage-chairs.webp
+│   │   │   │   ├── michael-bock-vintage-chairs.webp
+│   │   │   │   ├── michael-bock-vintage-couch.webp
+│   │   │   │   └── series-reference
+│   │   │   │       ├── michael-bock-kitchen-chair-leather-seat.webp
+│   │   │   │       ├── michael-bock-kitchen-chair-side.webp
+│   │   │   │       ├── michael-bock-kitchen-chair.webp
+│   │   │   │       ├── michael-bock-kitchen-stool-detail.webp
+│   │   │   │       ├── michael-bock-kitchen-stool.webp
+│   │   │   │       ├── michael-bock-original-rocking-chair.webp
+│   │   │   │       └── michael-bock-two-rocking-chairs.webp
+│   │   │   ├── desk-series
+│   │   │   │   ├── desks
+│   │   │   │   │   ├── 0CA66DC3F0574E5D.webp
+│   │   │   │   │   ├── IMG_3163.webp
+│   │   │   │   │   ├── IMG_3164.webp
+│   │   │   │   │   ├── IMG_3169.webp
+│   │   │   │   │   ├── IMG_3184.webp
+│   │   │   │   │   ├── IMG_3185.webp
+│   │   │   │   │   ├── IMG_3186.webp
+│   │   │   │   │   ├── IMG_3188.webp
+│   │   │   │   │   ├── IMG_3189.webp
+│   │   │   │   │   └── michael-bock-old-desk.webp
+│   │   │   │   ├── michael-bock-big-desk-back.webp
+│   │   │   │   ├── michael-bock-big-desk-front.webp
+│   │   │   │   ├── michael-bock-blank-and-white-table.webp
+│   │   │   │   ├── michael-bock-desk-drawers.webp
+│   │   │   │   ├── michael-bock-desk-outside.webp
+│   │   │   │   ├── michael-bock-desk-shining.webp
+│   │   │   │   ├── michael-bock-desk-sleek.webp
+│   │   │   │   ├── michael-bock-table-on-carpet.webp
+│   │   │   │   ├── michael-bock-table-with-chair.webp
+│   │   │   │   ├── michael-bock-vintage-desk-table.webp
+│   │   │   │   ├── michael-bock-vintage-drawer-detail.webp
+│   │   │   │   ├── michael-bock-vintage-woodworking.webp
+│   │   │   │   └── series-order-reference
+│   │   │   │       ├── 12D7F196077D488B.webp
+│   │   │   │       ├── 8457F0DC9FF74494.webp
+│   │   │   │       ├── IMG_3051.webp
+│   │   │   │       ├── IMG_3057.webp
+│   │   │   │       ├── IMG_3062.webp
+│   │   │   │       ├── IMG_3066.webp
+│   │   │   │       ├── bigdeskback.webp
+│   │   │   │       ├── bigdeskfront.webp
+│   │   │   │       ├── bwtable.webp
+│   │   │   │       ├── desk1.webp
+│   │   │   │       ├── desk_1.webp
+│   │   │   │       └── drawers_details.webp
+│   │   │   ├── hyperbolic
+│   │   │   │   ├── hyberbolic-2.webp
+│   │   │   │   ├── hyperbolic-1.webp
+│   │   │   │   └── hyperbolic-3.webp
+│   │   │   ├── old-cabinets-tables
+│   │   │   │   ├── IMG_3159 copy.webp
+│   │   │   │   ├── IMG_3165.webp
+│   │   │   │   ├── IMG_3166.webp
+│   │   │   │   ├── IMG_3167.webp
+│   │   │   │   ├── IMG_3168.webp
+│   │   │   │   ├── IMG_3170.webp
+│   │   │   │   ├── IMG_3181.webp
+│   │   │   │   ├── IMG_3399.webp
+│   │   │   │   ├── IMG_3402.webp
+│   │   │   │   ├── IMG_3403.webp
+│   │   │   │   ├── glass-table.webp
+│   │   │   │   ├── michael-bock-dresser.JPG.webp
+│   │   │   │   ├── michael-bock-first-kitchen.webp
+│   │   │   │   ├── michael-bock-kitchen-table.webp
+│   │   │   │   ├── michael-bock-kitchen.webp
+│   │   │   │   ├── michael-bock-low-desk.webp
+│   │   │   │   ├── michael-bock-old-desk.webp
+│   │   │   │   └── michael-bock-vintage-table.webp
+│   │   │   ├── parallax-photos
+│   │   │   │   ├── 1.webp
+│   │   │   │   ├── 2.webp
+│   │   │   │   ├── 3.webp
+│   │   │   │   ├── 4.webp
+│   │   │   │   └── 5.webp
+│   │   │   └── working-shop
+│   │   │       ├── 100_2388.webp
+│   │   │       ├── 100_2600.webp
+│   │   │       ├── 100_2663.webp
+│   │   │       ├── 100_2706.webp
+│   │   │       ├── 100_2758.webp
+│   │   │       ├── 100_2778.webp
+│   │   │       ├── DSC09919.webp
+│   │   │       ├── DSC09922.webp
+│   │   │       ├── DSC09950.webp
+│   │   │       ├── DSC09962.webp
+│   │   │       ├── DSC09975.webp
+│   │   │       ├── IMG_20230310_162118090.webp
+│   │   │       ├── IMG_20231205_170723697_MF_PORTRAIT.webp
+│   │   │       ├── IMG_20231208_133102986_HDR.webp
+│   │   │       ├── michael-bock-beams.webp
+│   │   │       ├── michael-bock-doing-carpentry.webp
+│   │   │       ├── michael-bock-planning-rocking-chair.webp
+│   │   │       ├── michael-bock-tools.webp
+│   │   │       ├── michael-bock-woodworking-present-side.webp
+│   │   │       ├── michael-bock-woodworking-present.webp
+│   │   │       ├── michael-bock-woodworking-tools.webp
+│   │   │       ├── michael-bock-woodworking-upclose.webp
+│   │   │       ├── michael-bock-woodworking.webp
+│   │   │       └── michael-bock-working-in-shop.webp
 │   │   ├── article
-│   │   │   ├── IMG_3070.webp
-│   │   │   ├── IMG_3071.webp
-│   │   │   ├── IMG_3072.webp
-│   │   │   ├── IMG_3073.webp
-│   │   │   └── IMG_3074.webp
-│   │   └── michael-portrait.webp
+│   │   │   ├── article-page-1.webp
+│   │   │   ├── article-page-2.webp
+│   │   │   ├── article-page-3.webp
+│   │   │   ├── article-page-4.webp
+│   │   │   ├── article-page-5.webp
+│   │   │   └── article-page-6.webp
+│   │   ├── michael-bock-young.webp
+│   │   ├── michael-portrait.webp
+│   │   ├── michael.webp
+│   │   └── portraits
+│   │       ├── IMG_3172.webp
+│   │       ├── IMG_3174.webp
+│   │       ├── IMG_3175.webp
+│   │       ├── IMG_3177.webp
+│   │       ├── IMG_3178.webp
+│   │       ├── IMG_3179.webp
+│   │       ├── IMG_3180.webp
+│   │       ├── IMG_3190.webp
+│   │       ├── IMG_3191.webp
+│   │       ├── IMG_3192.webp
+│   │       ├── IMG_3193.webp
+│   │       ├── IMG_3194.webp
+│   │       ├── michael-bock-family.webp
+│   │       └── michael-bock-in-workshop.webp
 │   ├── about.png
 │   ├── cabinetry
 │   │   ├── 525-garage
@@ -63,6 +160,7 @@
 │   │   │   ├── michael-bock-pantry.webp
 │   │   │   ├── michael-bock-storage.webp
 │   │   │   └── michael-bock-stoveside.webp
+│   │   ├── Screenshot 2024-08-21 at 3.08.02 PM.psd
 │   │   ├── deer-run
 │   │   │   ├── michael-bock-cabinets-left.webp
 │   │   │   ├── michael-bock-cabinets.webp
@@ -103,6 +201,8 @@
 │   │       └── michael-bock-van-drawers.webp
 │   ├── cabinets.png
 │   ├── fine-furniture
+│   │   ├── Screenshot 2024-08-21 at 3.07.40 PM.psd
+│   │   ├── Screenshot 2024-08-21 at 4.50.28 PM.png
 │   │   ├── box-and-treen
 │   │   │   ├── michael-bock-box-top.webp
 │   │   │   ├── michael-bock-box.webp
@@ -200,12 +300,15 @@
 │       └── intagram-logo.svg
 ├── index.html
 ├── js
+│   ├── article.js
+│   ├── copy-email.js
 │   ├── gallery.js
 │   ├── home-spinner.js
 │   ├── improved-image-loading.js
 │   ├── main.js
+│   ├── parallax.js
 │   └── sticky-header.js
 ├── tree.txt
 └── vercel.json
 
-34 directories, 175 files
+44 directories, 268 files
