@@ -370,6 +370,10 @@ footer p {
     }
 }
 
+.large-video-container {
+    margin-top: -100px;
+}
+
 .video-container {
     position: relative;
     height: 315px;
@@ -380,6 +384,10 @@ footer p {
     align-items: center;
     justify-content: center;
     z-index: 1000
+}
+
+.building-the-workshop-title {
+    margin-bottom: -10px;
 }
 
 .video-container iframe {
