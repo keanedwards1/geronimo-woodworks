@@ -119,11 +119,16 @@ body {
     transition: text-shadow 0.3s ease, transform 0.3s ease;
 }
 
+.top-text-content p {
+    letter-spacing: 0.5px;
+}
+
 .text-content p {
     font-size: 1.2rem;
     color: #cccccc; 
     line-height: 1.8;
     margin-bottom: 20px;
+    letter-spacing: 0.5px;
     text-shadow: 0 0 8px rgba(123, 72, 5, 0.2); 
     transition: color 1.0s ease, text-shadow 1.0s ease;
 }
@@ -547,6 +552,10 @@ footer p {
     font-size: 22px;
     text-transform: uppercase;
     margin-bottom: 10px;
+}
+
+.about-text {
+    letter-spacing: 0.1em;
 }
 
 @media (max-width: 1200px) {

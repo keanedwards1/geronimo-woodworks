@@ -1,5 +1,5 @@
 let currentPage = 1;
-const totalPages = 6;
+const totalPages = 5;
 
 function changePage(direction) {
     currentPage += direction;

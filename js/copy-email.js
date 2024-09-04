@@ -1,6 +1,6 @@
 document.getElementById('contactButton').addEventListener('click', function(e) {
     e.preventDefault(); // Prevents the default mailto action
-    const email = 'geronimoww2@comcast.net';
+    const email = 'geronimowoodworks@gmail.com';
     
     navigator.clipboard.writeText(email).then(() => {
         // Change tooltip text to indicate the email was copied
