@@ -542,7 +542,11 @@ footer p {
 }
 
 .gallery-group h2 {
-    text-align: center;
+    text-align: left;
+    margin-left: 65px;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
 
 @media (max-width: 1200px) {
