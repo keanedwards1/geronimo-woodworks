@@ -169,6 +169,10 @@ body {
     flex: 1;
 }
 
+#contact-header {
+    text-align: center !important;
+}
+
 .image-content img {
     width: 100%;
     height: auto;
@@ -247,6 +251,16 @@ p {
     background-attachment: fixed; /* Creates the parallax effect */
 }
 
+.parallax-image-3 {
+    background-image: url("/images/about-historic/archive-photos/working-shop/michael-bock-working-in-shop-triptic.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%; /* Ensure it covers the container's full height */
+    width: 100%;
+    background-attachment: fixed; /* Creates the parallax effect */
+}
+
 footer {
     margin-top: 100px;
 }
@@ -257,7 +271,7 @@ footer p {
 }
 
 .contact-button {
-    align-self: flex-start;
+    align-self: center;
     position: relative;
     display: inline-block;
     padding: 7px 20px;
@@ -275,11 +289,11 @@ footer p {
 
 
 .tooltip {
-    align-self: flex-start;
+    align-self: center;
     position: relative;
     background-color: #fdfdfd;
     margin-top: 20px;
-    margin-left: 18px;
+    margin-left: 20px;
     font-size: 12px;
     color: #000000;
     padding: 2px 4px;
@@ -529,8 +543,20 @@ footer p {
     object-fit: cover; /* This ensures the image covers the entire div without distortion */
 }
 
+@media (min-width: 900px) {
+    .about-section {
+        height: 83vh;
+    }
+}
+
+
+
 /* Responsive adjustment */
 @media (max-width: 900px) {
+
+    .about-section {
+        min-height: 130vh;
+    }
     #about .content-wrapper {
         margin-top: 0;
         flex-direction: column;
