@@ -38,13 +38,50 @@ body {
     justify-content: center;
 }
 
+.series-container {
+    margin: 20px 0;
+}
+
 .small-height {
     height: 70vh;
+}
+
+.the-beginning-section {
+    height: 64vh;
+}
+
+.the-early-years-section {
+    height: 60vh;
 }
 
 @media (max-width: 768px) {
     .snap-section {
         min-height: 130vh;
+    }
+    .small-height {
+        min-height: 120vh;
+    }
+    .the-beginning-section {
+        min-height: 95vh;
+    }
+    .the-early-years-section {
+        min-height: 90vh;
+        margin-top: -10vh;
+    }
+    .first-dose-of-apprenticing-section {
+        min-height: 100vh;
+    }
+}
+
+@media (max-width: 500px) {
+    .small-height {
+        min-height: 90vh;
+    }
+    .the-beginning-section {
+        min-height: 84vh;
+    }
+    .first-dose-of-apprenticing-section {
+        min-height: 100vh;
     }
 }
 
@@ -262,7 +299,6 @@ p {
 }
 
 footer {
-    margin-top: 100px;
 }
 
 footer p {
