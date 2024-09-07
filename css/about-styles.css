@@ -102,7 +102,7 @@ body {
     }
     .more-than-just-hyperbolic {
         margin-top: -2vh;
-        min-height: 68vh;
+        min-height: 76vh;
     }
     .content-wrapper {
         gap: 0px !important;
@@ -121,7 +121,7 @@ body {
         margin-top: 0vh;
     }
     .learning-a-new-craft {
-        min-height: 64vh;
+        min-height: 74vh;
     }
     .my-first-kitchen {
         min-height: 64vh;
@@ -134,7 +134,7 @@ body {
     }
     .fine-furniture {
         min-height: 84vh;
-        height: 95vh;
+        height: 100vh;
     }
     .article-container {
         margin-top: 40px !important;
@@ -144,6 +144,9 @@ body {
     }
     .working-on-more-complex {
         min-height: 120vh;
+    }
+    .naturall-pushing-the-limits {
+        min-height: 100vh;
     }
 }
 
