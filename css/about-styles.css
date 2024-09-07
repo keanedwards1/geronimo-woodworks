@@ -146,8 +146,9 @@ body {
     .working-on-more-complex {
         min-height: 120vh;
     }
-    .naturall-pushing-the-limits {
-        min-height: 130vh;
+    .naturally-pushing-the-limits {
+        min-height: 100vh;
+        margin-bottom: -10vh;
     }
 }
 
