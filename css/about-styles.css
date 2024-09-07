@@ -103,6 +103,7 @@ body {
     .more-than-just-hyperbolic {
         margin-top: -2vh;
         min-height: 76vh;
+        height: 80vh;
     }
     .content-wrapper {
         gap: 0px !important;
@@ -146,7 +147,7 @@ body {
         min-height: 120vh;
     }
     .naturall-pushing-the-limits {
-        min-height: 100vh;
+        min-height: 130vh;
     }
 }
 
