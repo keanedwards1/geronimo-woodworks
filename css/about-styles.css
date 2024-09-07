@@ -146,6 +146,9 @@ body {
     .working-on-more-complex {
         min-height: 130vh;
     }
+    .future-thinking {
+        min-height: 90vh;
+    }
     .naturally-pushing-the-limits {
         min-height: 100vh;
         margin-bottom: -5vh;
