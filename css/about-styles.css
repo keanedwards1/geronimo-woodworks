@@ -81,8 +81,8 @@ body {
         min-height: 90vh;
     }
     .large-video-container {
-        min-height: 20vh;
-        height: 20vh;
+        min-height: 30vh;
+        height: 30vh;
     }
 }
 
@@ -118,7 +118,7 @@ body {
         height: 80vh;
     }
     .desk-series {
-        margin-top: 14vh;
+        margin-top: 0vh;
     }
     .learning-a-new-craft {
         min-height: 64vh;
@@ -141,6 +141,9 @@ body {
     }
     .contact-section {
         min-height: 76vh;
+    }
+    .working-on-more-complex {
+        min-height: 120vh;
     }
 }
 
@@ -357,6 +360,21 @@ p {
     background-attachment: fixed; /* Creates the parallax effect */
 }
 
+@media screen and (max-width: 600px) {
+    .parallax-image-1, .parallax-image-2, .parallax-image-3 {
+        background-attachment: scroll; /* Disable the parallax effect */
+        height: 50vh; /* Reduce the height for smaller screens */
+    }
+
+    .parallax-image-container {
+        height: 30vh; /* Reduce container height */
+    }
+
+    .content {
+        padding: 20px; /* Add padding to the content for better readability */
+    }
+}
+
 footer {
 }
 
@@ -542,7 +560,7 @@ footer p {
 }
 
 /* For screens smaller than 576px */
-@media screen and (max-width: 575px) {
+@media screen and (max-width: 640px) {
     .video-two-container iframe {
         width: 480px;
         height: 270px;
