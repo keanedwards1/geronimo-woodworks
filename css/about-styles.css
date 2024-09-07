@@ -71,6 +71,19 @@ body {
     .first-dose-of-apprenticing-section {
         min-height: 100vh;
     }
+    .series-container {
+        min-height: 90vh;
+    }
+    .learning-a-new-craft {
+        min-height: 95vh;
+    }
+    .my-first-kitchen {
+        min-height: 90vh;
+    }
+    .large-video-container {
+        min-height: 20vh;
+        height: 20vh;
+    }
 }
 
 @media (max-width: 500px) {
@@ -80,8 +93,54 @@ body {
     .the-beginning-section {
         min-height: 84vh;
     }
+    .the-early-years-section {
+        min-height: 64vh;
+        margin-top: -10vh;
+    }
     .first-dose-of-apprenticing-section {
+        min-height: 87vh;
+    }
+    .more-than-just-hyperbolic {
+        margin-top: -2vh;
+        min-height: 68vh;
+    }
+    .content-wrapper {
+        gap: 0px !important;
+    }
+    h2 {
+        margin-block-start: 0.42em;
+    }
+    .text-content h2 {
+        margin-bottom: 0px !important;
+    }
+    .series-container {
+        min-height: 80vh;
+        height: 80vh;
+    }
+    .desk-series {
+        margin-top: 14vh;
+    }
+    .learning-a-new-craft {
+        min-height: 64vh;
+    }
+    .my-first-kitchen {
+        min-height: 64vh;
+    }
+    .small-video-container {
         min-height: 100vh;
+    }
+    .home-container {
+        min-height: 64vh;
+    }
+    .fine-furniture {
+        min-height: 84vh;
+        height: 95vh;
+    }
+    .article-container {
+        margin-top: 40px !important;
+    }
+    .contact-section {
+        min-height: 76vh;
     }
 }
 
@@ -606,6 +665,13 @@ footer p {
     #about .top-text-content {
         padding-left: 0;
         padding-top: 20px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .about-section {
+        min-height: 90vh;
     }
 }
 
