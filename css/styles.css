@@ -269,7 +269,7 @@ footer {
 
 @media (max-width: 600px) {
     .gallery-item-wrapper {
-        aspect-ratio: 9 / 16;
+        aspect-ratio: 12 / 16;
     }
 }
 
