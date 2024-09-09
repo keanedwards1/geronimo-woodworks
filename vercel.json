@@ -22,7 +22,7 @@
     { "src": "/", "dest": "/index.html" },
     { "src": "/about", "dest": "/about.html" },
     { "src": "/cabinets", "dest": "/cabinets.html" },
-    { "src": "/fine_furniture", "dest": "/fine_furniture.html" },
+    { "src": "/furniture", "dest": "/fine_furniture.html" },
     { "src": "/css/(.*)", "dest": "/css/$1" },
     { "src": "/js/(.*)", "dest": "/js/$1" },
     { "src": "/images/(.*)", "dest": "/images/$1" },
