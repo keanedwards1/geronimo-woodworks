@@ -410,3 +410,183 @@ footer {
         margin-left: 0px;
     }
   }
+
+/* Tomasi-inspired project reel style (scoped to cabinetry page) */
+.project-reel-page {
+    --reel-side-padding: 0px;
+    --reel-height: clamp(210px, 33vw, 360px);
+    --reel-gap: 0px;
+    color: #1d1d1d;
+    background-color: #ffffff;
+}
+
+.project-reel-page,
+.project-reel-page h1,
+.project-reel-page .project-caption {
+    font-family: 'Raleway', 'Lato', 'Roboto', sans-serif;
+}
+
+.project-reel-page header {
+    border-bottom: none;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+
+.project-reel-page header.scrolled {
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+.project-reel-page .gallery-container {
+    padding-top: 28px;
+    padding-bottom: 28px;
+    overflow: visible;
+}
+
+.project-reel-page .gallery-group {
+    width: 100%;
+    margin: 0 0 62px;
+    position: relative;
+}
+
+.project-reel-page .gallery-scroll {
+    align-items: stretch;
+    transition: transform 0.35s ease;
+    will-change: transform;
+}
+
+.project-reel-page .gallery-item-wrapper {
+    width: calc((100% - (2 * var(--reel-gap))) / 3);
+    margin: 0 var(--reel-gap) 0 0;
+    height: var(--reel-height);
+    border-radius: 0;
+    background-color: transparent;
+}
+
+.project-reel-page .gallery-item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0 !important;
+}
+
+.project-reel-page .loading-spinner {
+    display: none;
+}
+
+.project-reel-page .project-caption {
+    margin: 10px 0 0;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: clamp(0.64rem, 0.95vw, 0.8rem);
+    font-weight: 400;
+    color: #2a2a2a;
+}
+
+.project-reel-page .gallery-nav {
+    top: calc((var(--reel-height) / 2) - 18px);
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border-radius: 3px !important;
+    border-bottom-left-radius: 1px;
+    color: #1f1f1f;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: background-color 0.2s ease;
+    font-size: 0;
+    background-color: rgba(255, 255, 255, 0.797);
+    border: 0;
+    overflow: visible;
+    box-sizing: border-box;
+    z-index: 15;
+}
+
+.project-reel-page .gallery-nav:hover {
+    background-color: rgba(255, 255, 255, 0.976);
+}
+
+.project-reel-page .gallery-nav i {
+    display: none;
+}
+
+.project-reel-page .gallery-nav.prev {
+    left: 6px;
+}
+
+.project-reel-page .gallery-nav.next {
+    right: 6px;
+}
+
+.project-reel-page .gallery-nav.disabled {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.project-reel-page .gallery-group:focus-visible {
+    outline: 1px solid #d9d9d9;
+    outline-offset: 8px;
+}
+
+/* Tomasi-style gallery reel controls (from custom.css treatment) */
+.project-reel-page .gallery-reel-control-btn-icon svg {
+    display: none;
+}
+
+.project-reel-page .gallery-reel-control-btn-icon {
+    width: 18px;
+    height: 30px;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='1000' viewBox='0 0 1000 1000' width='1000' xmlns='http://www.w3.org/2000/svg'><path d='M767.9,499.9L291.6,10l-59.4,61.3l416.6,428.7L232.1,928.7l59.5,61.3L767.9,499.9z'/></svg>");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.project-reel-page [data-previous] .gallery-reel-control-btn-icon {
+    transform: scaleX(-1);
+}
+
+@media (max-width: 900px) {
+    .project-reel-page {
+        --reel-side-padding: 0px;
+        --reel-height: clamp(170px, 35vw, 290px);
+        --reel-gap: 0px;
+    }
+
+    .project-reel-page .gallery-group {
+        margin-bottom: 42px;
+    }
+
+    .project-reel-page .project-caption {
+        letter-spacing: 0.08em;
+    }
+
+    .project-reel-page .gallery-nav {
+        width: 40px;
+        height: 40px;
+    }
+
+    .project-reel-page .gallery-nav.prev {
+        left: 4px;
+    }
+
+    .project-reel-page .gallery-nav.next {
+        right: 4px;
+    }
+}
+
+@media (max-width: 620px) {
+    .project-reel-page {
+        --reel-height: clamp(220px, 58vw, 340px);
+    }
+
+    .project-reel-page .gallery-item-wrapper {
+        width: calc((100% - var(--reel-gap)) / 2);
+    }
+
+    .project-reel-page .project-caption {
+        font-size: 0.6rem;
+    }
+}
