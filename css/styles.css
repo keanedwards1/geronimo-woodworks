@@ -420,20 +420,12 @@ footer {
     background-color: #ffffff;
 }
 
-.project-reel-page,
-.project-reel-page h1,
 .project-reel-page .project-caption {
     font-family: 'Raleway', 'Lato', 'Roboto', sans-serif;
 }
 
-.project-reel-page header {
-    border-bottom: none;
-    padding-top: 14px;
-    padding-bottom: 14px;
-}
-
 .project-reel-page header.scrolled {
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .project-reel-page .gallery-container {
