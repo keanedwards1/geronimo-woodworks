@@ -340,7 +340,7 @@ footer {
 }
 
 
-/* fine furniture and cabinetry page spinner on images before they load with fade in */
+/* spinner and fade-in on images before they load (all gallery pages) */
 
 .gallery-item-wrapper {
     position: relative;
@@ -355,7 +355,6 @@ footer {
 .gallery-item-wrapper.loaded .gallery-item {
     opacity: 1;
 }
-
 .gallery-item-wrapper.loaded .loading-spinner {
     display: none;
 }
@@ -447,7 +446,8 @@ footer {
 }
 
 .project-reel-page .gallery-item-wrapper {
-    width: calc((100% - (2 * var(--reel-gap))) / 3);
+    width: auto;
+    flex-shrink: 0;
     margin: 0 var(--reel-gap) 0 0;
     height: var(--reel-height);
     border-radius: 0;
@@ -455,9 +455,9 @@ footer {
 }
 
 .project-reel-page .gallery-item {
-    width: 100%;
+    width: auto;
     height: 100%;
-    object-fit: cover;
+    object-fit: unset;
     border-radius: 0 !important;
 }
 
