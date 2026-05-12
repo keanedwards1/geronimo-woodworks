@@ -54,5 +54,5 @@ def process_directory(directory_path, max_size=1200, quality=85):
                 print(f"Error processing {filename} in {directory_path}: {str(e)}")
 
 if __name__ == "__main__":
-    cabinetry_path = "/Users/kean.edwards/Desktop/Projects/michael/images/cabinetry/yuri-kitchen"
+    cabinetry_path = "/Users/kean.edwards/Desktop/Projects/michael/images/fine-furniture/folding-desk"
     process_directory(cabinetry_path)

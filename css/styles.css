@@ -478,7 +478,7 @@ footer {
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    font-size: clamp(0.64rem, 0.95vw, 0.8rem);
+    font-size: clamp(0.94rem, 1.1vw, 0.9rem);
     font-weight: 400;
     color: #2a2a2a;
 }
@@ -518,6 +518,14 @@ footer {
 
 .project-reel-page .gallery-nav.next {
     right: 6px;
+}
+
+.project-reel-page .gallery-nav.next:hover {
+    cursor: pointer;
+}
+
+.project-reel-page .gallery-nav.prev:hover {
+    cursor: pointer;
 }
 
 .project-reel-page .gallery-nav.disabled {
