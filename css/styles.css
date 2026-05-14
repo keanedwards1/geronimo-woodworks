@@ -437,6 +437,7 @@ footer {
     width: 100%;
     margin: 0 0 62px;
     position: relative;
+    overflow: hidden;
 }
 
 .project-reel-page .gallery-scroll {
@@ -450,6 +451,7 @@ footer {
     flex-shrink: 0;
     margin: 0 var(--reel-gap) 0 0;
     height: var(--reel-height);
+    aspect-ratio: auto;
     border-radius: 0;
     background-color: transparent;
 }
@@ -580,10 +582,11 @@ footer {
 @media (max-width: 620px) {
     .project-reel-page {
         --reel-height: clamp(220px, 58vw, 340px);
+        --reel-gap: 14px;
     }
 
-    .project-reel-page .gallery-item-wrapper {
-        width: calc((100% - var(--reel-gap)) / 2);
+    .project-reel-page .gallery-scroll {
+        padding-left: var(--reel-gap);
     }
 
     .project-reel-page .project-caption {

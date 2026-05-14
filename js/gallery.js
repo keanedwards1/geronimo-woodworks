@@ -19,7 +19,7 @@ function ensureCaption(group, label) {
 
 function getVisibleCount(totalItems) {
     if (!totalItems) return 1;
-    if (window.innerWidth <= 620) return Math.min(2, totalItems);
+    if (window.innerWidth <= 620) return 1;
     return Math.min(3, totalItems);
 }
 
