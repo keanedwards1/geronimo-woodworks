@@ -1,0 +1,22 @@
+.
+├── START_HERE.md
+├── css
+│   └── demo.css
+├── html
+│   ├── image-scale.html
+│   ├── pause-on-hover.html
+│   ├── reverse.html
+│   ├── tall-images.html
+│   └── wide-images.html
+├── images
+│   ├── image1.webp
+│   ├── image2.webp
+│   ├── image3.webp
+│   ├── image4.webp
+│   └── logo.png
+├── index.html
+├── marquee.css
+├── marquee.js
+└── tree.txt
+
+4 directories, 16 files

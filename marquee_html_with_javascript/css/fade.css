@@ -1,0 +1,82 @@
+/* /css/fade.css */
+
+/* The first two classes may need to be merged with their existing
+definitions in marquee.css if used in a production project 
+for the sake of optimization. */
+
+.marquee-wrapper {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.marquee-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 0px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    margin: 0 auto;
+    transition: height 0.3s ease;
+}
+
+/* END marquees that may need to be merged (not critical) */
+
+.marquee-container::before,
+.marquee-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 150px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, 
+        rgba(255, 255, 255, 1) 0%, 
+        rgba(255, 255, 255, 0.95) 20%,
+        rgba(255, 255, 255, 0.85) 40%,
+        rgba(255, 255, 255, 0.5) 60%,
+        rgba(255, 255, 255, 0.2) 80%,
+        rgba(255, 255, 255, 0) 100%
+    );
+}
+
+.marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, 
+        rgba(255, 255, 255, 1) 0%, 
+        rgba(255, 255, 255, 0.95) 20%,
+        rgba(255, 255, 255, 0.85) 40%,
+        rgba(255, 255, 255, 0.5) 60%,
+        rgba(255, 255, 255, 0.2) 80%,
+        rgba(255, 255, 255, 0) 100%
+    );
+}
+
+@media (prefers-color-scheme: dark) {
+    .marquee-container::before {
+        background: linear-gradient(to right, 
+            rgba(15, 14, 14, 1) 0%,
+            rgba(15, 14, 14, 0.95) 20%,
+            rgba(15, 14, 14, 0.85) 40%,
+            rgba(15, 14, 14, 0.5) 60%,
+            rgba(15, 14, 14, 0.2) 80%,
+            rgba(15, 14, 14, 0) 100%
+        );
+    }
+
+    .marquee-container::after {
+        background: linear-gradient(to left, 
+            rgba(15, 14, 14, 1) 0%,
+            rgba(15, 14, 14, 0.95) 20%,
+            rgba(15, 14, 14, 0.85) 40%,
+            rgba(15, 14, 14, 0.5) 60%,
+            rgba(15, 14, 14, 0.2) 80%,
+            rgba(15, 14, 14, 0) 100%
+        );
+    }
+}

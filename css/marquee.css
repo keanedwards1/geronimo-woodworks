@@ -1,0 +1,104 @@
+/* css/marquee.css */
+
+.series-marquee-group {
+    width: calc(100% - 100px);
+    margin: 0 auto;
+    position: relative;
+}
+
+.series-marquee-title {
+    text-align: left;
+    margin-left: 65px;
+    font-size: 22px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.series-marquee {
+    width: 100%;
+}
+
+.marquee-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+/*     background: rgb(104, 103, 101);
+ */    border-radius: 6px;
+    margin: 0 auto;
+    transition: height 0.3s ease;
+}
+
+.marquee-track {
+    position: absolute;
+    display: flex;
+    height: 100%;
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+.marquee-item {
+    flex: none;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee-image {
+    height: 100%;
+    display: block;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.3s ease;
+    border-radius: 4px;
+}
+
+.marquee-image.rotated-image {
+    transform: translateZ(0) rotate(90deg);
+}
+
+.marquee-item:hover .marquee-image {
+    transform: translateZ(0) scale(var(--marquee-scale, 1));
+}
+
+.marquee-item:hover .marquee-image.rotated-image {
+    transform: translateZ(0) rotate(90deg) scale(var(--marquee-scale, 1));
+}
+
+.marquee-loading {
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.marquee-loading::after {
+    content: '';
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-top: 3px solid #f6f6f6;
+    border-radius: 50%;
+    animation: marquee-spin 1s linear infinite;
+}
+
+@keyframes marquee-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .series-marquee-group {
+        width: calc(100% - 40px);
+    }
+
+    .series-marquee-title {
+        margin-left: 0;
+    }
+}

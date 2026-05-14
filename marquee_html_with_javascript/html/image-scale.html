@@ -1,0 +1,68 @@
+<!-- /html/image-scale.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <!--
+        MarqueeKit's Image Scale Demo
+        The instructions to install Marquee Kit 
+        can be found in the START_HERE.md file. 
+    -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MarqueeKit Demo | Image Scale</title>
+        <link rel="stylesheet" href="/marquee.css">
+        <link rel="stylesheet" href="/css/demo.css">
+        <link rel="icon" type="image/png" href="/images/logo.png">
+    </head>
+
+    <body>
+        <div class="marquee-wrapper"
+            <!-- Marquee Element -->
+            <h1>MarqueeKit Examples</h1>
+            <section class="image-marquee">
+                <h2>Smooth Scale On Hover</h2>
+                <div id="scaling-marquee"></div>
+            </section>
+        </div>
+
+
+        <!-- Demo Navigation -->
+        <div class="demo-nav">
+            <button onclick="location.href='/index.html'">Basic</button>
+            <button onclick="location.href='/html/reverse.html'">Reversed</button>
+            <button onclick="location.href='/html/pause-on-hover.html'">Pause On Hover</button>
+            <button onclick="location.href='/html/image-scale.html'">Grow</button>
+            <button onclick="location.href='/html/animate.html'">On-Load Animations</button>
+            <button onclick="location.href='/html/fade.html'">Fade</button>
+            <button onclick="location.href='/html/mixed.html'">Mixed</button>
+            <button onclick="location.href='/html/wide-images.html'">Wide Images</button>
+            <button onclick="location.href='/html/tall-images.html'">Tall Images</button>
+        </div>
+
+        <!-- Link to MarqueeKit's script -->
+        <script src="/marquee.js"></script>
+
+        <!-- Instance Initialization -->
+        <script>
+            const images1 = [
+                "/images/image1.webp",
+                "/images/image2.webp",
+                "/images/image3.webp",
+                "/images/image4.webp",
+            ];
+
+            new MarqueeKit("#scaling-marquee", { 
+                images: images1,
+                height: 300,      
+                speed: 50,        
+                gap: 20,
+                reverse: true,
+                imageScale: 1.05 // Critical difference for this file. You can test 1.1, 1.13, 4, etc.. 
+                                // Up to 4 decimal points is practical.
+            });
+        </script>
+
+    </body>
+</html>
