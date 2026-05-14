@@ -88,14 +88,26 @@ function initReelGallery(group) {
 
     const firstImage = scroll.querySelector('.gallery-item');
     const fallbackLabel = firstImage ? firstImage.getAttribute('alt') : '';
-    const projectLabel = formatProjectLabel(group.dataset.projectTitle || fallbackLabel);
-    ensureCaption(group, projectLabel);
 
     const originalItems = Array.from(scroll.querySelectorAll('.gallery-item-wrapper'));
     const N = originalItems.length;
     let visibleCount = getVisibleCount(N);
     let logicalIndex = 0;
     let isAnimating = false;
+
+    const hasItemTitles = originalItems.some(item => item.dataset.itemTitle);
+    const initialLabel = hasItemTitles
+        ? (originalItems[0].dataset.itemTitle || formatProjectLabel(group.dataset.projectTitle || fallbackLabel))
+        : formatProjectLabel(group.dataset.projectTitle || fallbackLabel);
+    ensureCaption(group, initialLabel);
+
+    function updateCaption() {
+        if (!hasItemTitles) return;
+        const caption = group.querySelector('.project-caption');
+        if (!caption) return;
+        const item = originalItems[logicalIndex];
+        caption.textContent = (item && item.dataset.itemTitle) ? item.dataset.itemTitle : initialLabel;
+    }
 
     function getItemWidth(item) {
         const w = item.getBoundingClientRect().width;
@@ -178,6 +190,7 @@ function initReelGallery(group) {
         if (N <= visibleCount) return;
         setTranslate(N + logicalIndex, false);
         isAnimating = false;
+        updateCaption();
     });
 
     if (prev && next) {
