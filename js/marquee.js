@@ -108,12 +108,8 @@ class MarqueeKit {
             return item;
         });
 
-        const leftClone = this.items.map(item => item.cloneNode(true));
-        const rightClone = this.items.map(item => item.cloneNode(true));
-
-        leftClone.forEach(item => this.track.appendChild(item));
         this.items.forEach(item => this.track.appendChild(item));
-        rightClone.forEach(item => this.track.appendChild(item));
+        this.items.forEach(item => this.track.appendChild(item.cloneNode(true)));
 
         this.container.appendChild(this.track);
 
@@ -173,9 +169,8 @@ class MarqueeKit {
             return total + item.offsetWidth + marginRight;
         }, 0);
 
-        this.track.style.width = `${this.contentWidth * 3}px`;
-        // Start on the middle copy so both directions have buffer space.
-        this.currentTranslate = -this.contentWidth;
+        this.track.style.width = `${this.contentWidth * 2}px`;
+        this.currentTranslate = this.options.reverse ? -this.contentWidth : 0;
     }
 
     animate(timestamp) {
@@ -199,13 +194,12 @@ class MarqueeKit {
         this.currentTranslate += this.options.reverse ? distance : -distance;
 
         const totalWidth = this.contentWidth || 1;
-        const minTranslate = -2 * totalWidth;
-        const maxTranslate = -totalWidth;
+        const mod = (n, m) => ((n % m) + m) % m;
 
-        if (this.currentTranslate <= minTranslate) {
-            this.currentTranslate += totalWidth;
-        } else if (this.currentTranslate > maxTranslate) {
-            this.currentTranslate -= totalWidth;
+        if (this.options.reverse) {
+            this.currentTranslate = mod(this.currentTranslate + totalWidth, totalWidth) - totalWidth;
+        } else {
+            this.currentTranslate = -mod(-this.currentTranslate, totalWidth);
         }
 
         this.track.style.transform = `translate3d(${this.currentTranslate}px, 0, 0)`;
