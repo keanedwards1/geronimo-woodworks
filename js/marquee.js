@@ -9,6 +9,7 @@ class MarqueeKit {
             imageWidth: 250,
             imageFit: 'cover',
             gap: 20,
+            lazyLoad: false,
             pauseOnHover: false,
             reverse: false,
             imageScale: 1,
@@ -84,7 +85,9 @@ class MarqueeKit {
             if (entry.className) {
                 img.classList.add(...entry.className.split(' ').filter(Boolean));
             }
-            img.loading = 'lazy';
+            // Keep widths stable on mobile Safari by eagerly loading marquee images.
+            img.loading = this.options.lazyLoad ? 'lazy' : 'eager';
+            img.decoding = 'async';
 
             if (this.options.imageWidth === 'auto') {
                 img.style.width = 'auto';
@@ -124,10 +127,10 @@ class MarqueeKit {
     }
 
     waitForImages() {
-        const images = Array.from(this.container.querySelectorAll('img'));
-        const maxToAwait = Math.min(8, images.length);
-        const awaited = images.slice(0, maxToAwait);
-        const promises = awaited.map(img => new Promise(resolve => {
+        const images = this.items
+            .map(item => item.querySelector('img'))
+            .filter(Boolean);
+        const promises = images.map(img => new Promise(resolve => {
             if (img.complete) {
                 resolve();
             } else {
