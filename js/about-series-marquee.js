@@ -67,4 +67,3 @@ function buildAboutSeriesMarquees() {
 }
 
 document.addEventListener('DOMContentLoaded', buildAboutSeriesMarquees);
-/* a */

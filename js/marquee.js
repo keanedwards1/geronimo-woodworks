@@ -109,7 +109,8 @@ class MarqueeKit {
         });
 
         this.items.forEach(item => this.track.appendChild(item));
-        this.items.forEach(item => this.track.appendChild(item.cloneNode(true)));
+        this.cloneItems = this.items.map(item => item.cloneNode(true));
+        this.cloneItems.forEach(item => this.track.appendChild(item));
 
         this.container.appendChild(this.track);
 
@@ -146,7 +147,7 @@ class MarqueeKit {
         if (this.options.imageWidth !== 'auto') return;
 
         const containerHeight = this.container.clientHeight || this.options.height;
-        this.items.forEach(item => {
+        this.items.forEach((item, index) => {
             const img = item.querySelector('img');
             if (!img) return;
 
@@ -159,6 +160,17 @@ class MarqueeKit {
             img.style.width = '100%';
             img.style.height = '100%';
             img.style.objectFit = 'cover';
+
+            const clone = this.cloneItems && this.cloneItems[index];
+            if (clone) {
+                const cloneImg = clone.querySelector('img');
+                clone.style.width = `${width}px`;
+                if (cloneImg) {
+                    cloneImg.style.width = '100%';
+                    cloneImg.style.height = '100%';
+                    cloneImg.style.objectFit = 'cover';
+                }
+            }
         });
     }
 
