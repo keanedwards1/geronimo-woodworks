@@ -119,6 +119,8 @@ class MarqueeKit {
                 this.loadingOverlay = null;
             }
 
+            // Safari/iOS can mis-measure auto-width flex items; set explicit widths.
+            this.applyAutoItemWidths();
             this.calculateDimensions();
             this.setupIntersectionObserver();
             this.setupEventListeners();
@@ -138,6 +140,26 @@ class MarqueeKit {
             }
         }));
         return Promise.all(promises);
+    }
+
+    applyAutoItemWidths() {
+        if (this.options.imageWidth !== 'auto') return;
+
+        const containerHeight = this.container.clientHeight || this.options.height;
+        this.items.forEach(item => {
+            const img = item.querySelector('img');
+            if (!img) return;
+
+            const naturalWidth = img.naturalWidth || 1;
+            const naturalHeight = img.naturalHeight || 1;
+            const ratio = naturalWidth / naturalHeight;
+            const width = Math.max(1, Math.round(containerHeight * ratio));
+
+            item.style.width = `${width}px`;
+            img.style.width = '100%';
+            img.style.height = '100%';
+            img.style.objectFit = 'cover';
+        });
     }
 
     calculateDimensions() {
