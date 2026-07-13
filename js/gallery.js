@@ -27,7 +27,7 @@ function getVisibleCount(totalItems) {
 // Triple-track layout: [copy1][originalItems][copy3]
 // Snapping back to the middle copy (always decoded) prevents flash on loop reset.
 
-function buildTripleTrack(scroll, originalItems) {
+function buildTripleTrack(scroll, originalItems, onImageReady) {
     const copy1 = originalItems.map(item => item.cloneNode(true));
     const copy3 = originalItems.map(item => item.cloneNode(true));
 
@@ -36,11 +36,23 @@ function buildTripleTrack(scroll, originalItems) {
     originalItems.forEach(node => scroll.appendChild(node));
     copy3.forEach(node => scroll.appendChild(node));
 
-    [...copy1, ...copy3].forEach(wrapper => {
-        wrapper.classList.add('loaded');
+    // Reveal every wrapper (originals + clones) up front so nothing waits on the
+    // IntersectionObserver in improved-image-loading.js, and fade each image in
+    // the moment it actually decodes to avoid white flashes mid-scroll.
+    [...copy1, ...originalItems, ...copy3].forEach(wrapper => {
         wrapper.querySelectorAll('img').forEach(img => {
             img.loading = 'eager';
-            img.decode && img.decode().catch(() => {});
+            const reveal = () => {
+                wrapper.classList.add('loaded');
+                onImageReady && onImageReady(img);
+            };
+            if (img.complete && img.naturalWidth > 0) {
+                reveal();
+            } else {
+                img.addEventListener('load', reveal, { once: true });
+                img.addEventListener('error', reveal, { once: true });
+            }
+            img.decode && img.decode().then(reveal).catch(() => {});
         });
     });
 }
@@ -109,19 +121,41 @@ function initReelGallery(group) {
         caption.textContent = (item && item.dataset.itemTitle) ? item.dataset.itemTitle : initialLabel;
     }
 
+    // Cache each item's rendered width keyed by image src. Variable-width
+    // images measure as 0 until they decode; without a cache the offset math
+    // in setTranslate under-counts and the reel jumps once images finish
+    // loading. Cached widths keep the animated move and the post-animation
+    // snap in agreement.
+    const widthCache = new Map();
+
+    function cacheWidthFor(img) {
+        if (!img || !img.src) return;
+        const wrapper = img.closest('.gallery-item-wrapper');
+        if (!wrapper) return;
+        const w = wrapper.getBoundingClientRect().width;
+        if (w > 0) widthCache.set(img.src, w);
+    }
+
+    function refreshWidthCache() {
+        scroll.querySelectorAll('.gallery-item-wrapper').forEach(wrapper => {
+            const img = wrapper.querySelector('img');
+            if (!img || !img.src) return;
+            const w = wrapper.getBoundingClientRect().width;
+            if (w > 0) widthCache.set(img.src, w);
+        });
+    }
+
     function getItemWidth(item) {
+        const img = item.querySelector('img');
+        const src = img && img.src;
         const w = item.getBoundingClientRect().width;
-        if (w > 0) return w;
-        const src = item.querySelector('img') && item.querySelector('img').src;
-        if (src) {
-            for (const other of scroll.querySelectorAll('.gallery-item-wrapper')) {
-                const img = other.querySelector('img');
-                if (img && img.src === src) {
-                    const ow = other.getBoundingClientRect().width;
-                    if (ow > 0) return ow;
-                }
-            }
+        if (w > 0) {
+            if (src) widthCache.set(src, w);
+            return w;
         }
+        // Not yet laid out/decoded — fall back to a cached width for the same
+        // image so the offset stays correct.
+        if (src && widthCache.has(src)) return widthCache.get(src);
         return 0;
     }
 
@@ -149,6 +183,9 @@ function initReelGallery(group) {
     function initTrack() {
         visibleCount = getVisibleCount(N);
         logicalIndex = ((logicalIndex % N) + N) % N;
+        // Widths depend on --reel-height, which changes across breakpoints, so
+        // drop stale measurements when (re)building the track.
+        widthCache.clear();
 
         if (N <= visibleCount) {
             scroll.innerHTML = '';
@@ -164,7 +201,14 @@ function initReelGallery(group) {
         if (prev) prev.parentElement.style.display = '';
         if (next) next.parentElement.style.display = '';
 
-        buildTripleTrack(scroll, originalItems);
+        buildTripleTrack(scroll, originalItems, img => {
+            // As each image decodes, record its width and re-anchor the reel
+            // (without animating) so a late-loading image can't shift the
+            // current position out from under the viewer.
+            cacheWidthFor(img);
+            if (!isAnimating) setTranslate(N + logicalIndex, false);
+        });
+        refreshWidthCache();
         setTranslate(N + logicalIndex, false);
     }
 
