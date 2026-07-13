@@ -8,13 +8,14 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/home-variants.css">
         <script src="js/main.js" defer></script>
         <link rel="icon" type="image/png" href="/images/michael-bock-logo.png">
     </head>
 
 
 <body>
-    
+
     <header>
         <h1>
             <a href="/" class="header-content">
@@ -26,7 +27,7 @@
             </a>
         </h1>
     </header>
-    
+
     <nav>
         <ul>
             <li><a href="cabinets.html">CABINETS</a></li>
@@ -34,47 +35,344 @@
             <li><a href="about.html">ABOUT / ARCHIVE WORK</a></li>
         </ul>
     </nav>
-    
+
     <main>
-        <section class="home-gallery">
-            <article class="cabinets">
-                <a href="cabinets.html">
-                    <h2>CABINETS</h2>
-                    <div class="img-container">
-                        <div class="loading-spinner"></div>
-                        <img src="images/cabinets.png" alt="Modern kitchen with wooden cabinets">
+
+        <!-- =====================================================
+             VARIANT 1 — CLASSIC  (the existing homepage, preserved)
+             ===================================================== -->
+        <div class="home-variant" data-variant="v1">
+            <section class="home-gallery">
+                <article class="cabinets">
+                    <a href="cabinets.html">
+                        <h2>CABINETS</h2>
+                        <div class="img-container">
+                            <div class="loading-spinner"></div>
+                            <img src="images/cabinets.png" alt="Modern kitchen with wooden cabinets">
+                        </div>
+                    </a>
+                </article>
+                <article class="fine-furniture">
+                    <a href="furniture.html">
+                        <h2>FINE FURNITURE</h2>
+                        <div class="img-container">
+                            <div class="loading-spinner"></div>
+                            <img src="images/fine_furniture.png" alt="Wooden rocking chair">
+                        </div>
+                    </a>
+                </article>
+                <article class="about">
+                    <a href="about.html">
+                        <h2>ABOUT / ARCHIVE WORK</h2>
+                        <div class="img-container">
+                            <div class="loading-spinner"></div>
+                            <img src="images/about.png" alt="Craftsman working with wood">
+                        </div>
+                    </a>
+                </article>
+            </section>
+        </div>
+
+
+        <!-- =====================================================
+             VARIANT 2 — FEATURED TRIO
+             (client idea #1: scroll to top-3 fine furniture)
+             ===================================================== -->
+        <div class="home-variant" data-variant="v2">
+            <section class="v2-hero">
+                <img src="images/fine_furniture.png" alt="Fine furniture by Michael Bock">
+                <div class="v2-hero__inner">
+                    <p class="hv-eyebrow">Lorem ipsum dolor</p>
+                    <h2 class="hv-section-title">Lorem ipsum dolor sit amet</h2>
+                </div>
+                <span class="v2-hero__scroll">Lorem ipsum dolor ↓</span>
+            </section>
+
+            <section class="v2-featured hv-wrap">
+                <div class="v2-featured__head">
+                    <p class="hv-eyebrow">Lorem ipsum</p>
+                    <h3 class="hv-section-title">Lorem ipsum dolor sit</h3>
+                </div>
+                <div class="feature-grid">
+                    <a class="feature-card" href="furniture.html">
+                        <div class="feature-card__img">
+                            <span class="feature-card__rank">1</span>
+                            <img src="images/fine-furniture/butterfly-desk/michael-bock-butterfly-desk.webp" alt="Butterfly Desk">
+                        </div>
+                        <h4 class="feature-card__name">Butterfly Desk</h4>
+                        <p class="feature-card__meta">Lorem ipsum · dolor sit amet</p>
+                    </a>
+                    <a class="feature-card" href="furniture.html">
+                        <div class="feature-card__img">
+                            <span class="feature-card__rank">2</span>
+                            <img src="images/fine-furniture/maple-rocker/michael-bock-maple-rocking-chair-front.webp" alt="Maple Rocking Chair">
+                        </div>
+                        <h4 class="feature-card__name">Maple Rocking Chair</h4>
+                        <p class="feature-card__meta">Lorem ipsum · consectetur</p>
+                    </a>
+                    <a class="feature-card" href="furniture.html">
+                        <div class="feature-card__img">
+                            <span class="feature-card__rank">3</span>
+                            <img src="images/fine-furniture/cherry-desk/michael-bock-cherry-desk.webp" alt="Cherry Desk">
+                        </div>
+                        <h4 class="feature-card__name">Cherry Desk</h4>
+                        <p class="feature-card__meta">Lorem ipsum · dolor amet</p>
+                    </a>
+                </div>
+                <div style="text-align:center;">
+                    <a class="hv-cta" href="furniture.html">Lorem ipsum dolor</a>
+                </div>
+            </section>
+
+            <section class="v2-categories hv-wrap">
+                <p class="v2-categories__title">Lorem ipsum dolor</p>
+                <div class="home-gallery">
+                    <article class="cabinets">
+                        <a href="cabinets.html">
+                            <h2>CABINETS</h2>
+                            <div class="img-container">
+                                <div class="loading-spinner"></div>
+                                <img src="images/cabinets.png" alt="Modern kitchen with wooden cabinets">
+                            </div>
+                        </a>
+                    </article>
+                    <article class="fine-furniture">
+                        <a href="furniture.html">
+                            <h2>FINE FURNITURE</h2>
+                            <div class="img-container">
+                                <div class="loading-spinner"></div>
+                                <img src="images/fine_furniture.png" alt="Wooden rocking chair">
+                            </div>
+                        </a>
+                    </article>
+                    <article class="about">
+                        <a href="about.html">
+                            <h2>ABOUT / ARCHIVE WORK</h2>
+                            <div class="img-container">
+                                <div class="loading-spinner"></div>
+                                <img src="images/about.png" alt="Craftsman working with wood">
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- =====================================================
+             VARIANT 3 — CINEMATIC INTRO
+             (client idea #2: video plays on open, then reveal)
+             ===================================================== -->
+        <div class="home-variant" data-variant="v3">
+            <div class="v3-intro">
+                <video muted playsinline preload="auto" poster="movies/furniture-poster.jpg">
+                    <source src="movies/furniture.mp4" type="video/mp4">
+                    <source src="movies/furniture.mov" type="video/quicktime">
+                </video>
+                <div class="v3-intro__overlay">
+                    <h2 class="v3-intro__title">Michael Bock · Geronimo Woodworks</h2>
+                    <p class="v3-intro__sub">Lorem ipsum dolor sit</p>
+                </div>
+                <button class="v3-intro__skip" type="button">Lorem ipsum ✕</button>
+            </div>
+
+            <section class="v3-featured-band hv-wrap">
+                <div class="v3-featured-band__head">
+                    <p class="hv-eyebrow">Lorem ipsum</p>
+                    <h3 class="hv-section-title">Lorem ipsum dolor sit</h3>
+                    <p class="hv-lead" style="margin-left:auto;margin-right:auto;text-align:center;">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+                    </p>
+                </div>
+                <div class="feature-grid">
+                    <a class="feature-card" href="furniture.html">
+                        <div class="feature-card__img">
+                            <img src="images/fine-furniture/butterfly-desk/michael-bock-butterfly-desk.webp" alt="Butterfly Desk">
+                        </div>
+                        <h4 class="feature-card__name">Butterfly Desk</h4>
+                    </a>
+                    <a class="feature-card" href="furniture.html">
+                        <div class="feature-card__img">
+                            <img src="images/fine-furniture/maple-rocker/michael-bock-maple-rocking-chair-front.webp" alt="Maple Rocking Chair">
+                        </div>
+                        <h4 class="feature-card__name">Maple Rocking Chair</h4>
+                    </a>
+                    <a class="feature-card" href="furniture.html">
+                        <div class="feature-card__img">
+                            <img src="images/fine-furniture/cherry-desk/michael-bock-cherry-desk.webp" alt="Cherry Desk">
+                        </div>
+                        <h4 class="feature-card__name">Cherry Desk</h4>
+                    </a>
+                </div>
+                <div style="text-align:center;">
+                    <a class="hv-cta" href="furniture.html">Lorem ipsum dolor</a>
+                </div>
+            </section>
+
+            <section class="v2-categories hv-wrap">
+                <p class="v2-categories__title">Lorem ipsum dolor</p>
+                <div class="home-gallery">
+                    <article class="cabinets">
+                        <a href="cabinets.html">
+                            <h2>CABINETS</h2>
+                            <div class="img-container">
+                                <div class="loading-spinner"></div>
+                                <img src="images/cabinets.png" alt="Modern kitchen with wooden cabinets">
+                            </div>
+                        </a>
+                    </article>
+                    <article class="about">
+                        <a href="about.html">
+                            <h2>ABOUT / ARCHIVE WORK</h2>
+                            <div class="img-container">
+                                <div class="loading-spinner"></div>
+                                <img src="images/about.png" alt="Craftsman working with wood">
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- =====================================================
+             VARIANT 4 — SPLIT HERO  (idea A)
+             Looping furniture video on one side, editorial call-to-
+             action + a thumbnail rail on the other.
+             ===================================================== -->
+        <div class="home-variant" data-variant="v4">
+            <section class="v4-split">
+                <div class="v4-split__media">
+                    <video data-autoloop="true" muted loop playsinline preload="auto" poster="movies/furniture-poster.jpg">
+                        <source src="movies/furniture.mp4" type="video/mp4">
+                        <source src="movies/furniture.mov" type="video/quicktime">
+                    </video>
+                </div>
+                <div class="v4-split__copy">
+                    <p class="hv-eyebrow">Lorem ipsum</p>
+                    <h2 class="hv-section-title">Lorem ipsum dolor sit amet.</h2>
+                    <p class="hv-lead">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <div class="v4-rail">
+                        <a href="furniture.html"><img src="images/fine-furniture/butterfly-desk/michael-bock-butterfly-desk.webp" alt="Butterfly Desk"></a>
+                        <a href="furniture.html"><img src="images/fine-furniture/maple-rocker/michael-bock-maple-rocking-chair-front.webp" alt="Maple Rocking Chair"></a>
+                        <a href="furniture.html"><img src="images/fine-furniture/cherry-desk/michael-bock-cherry-desk.webp" alt="Cherry Desk"></a>
                     </div>
-                </a>
-            </article>
-            <article class="fine-furniture">
-                <a href="furniture.html">
-                    <h2>FINE FURNITURE</h2>
-                    <div class="img-container">
-                        <div class="loading-spinner"></div>
-                        <img src="images/fine_furniture.png" alt="Wooden rocking chair">
+                    <a class="hv-cta" href="furniture.html">Lorem ipsum dolor</a>
+                </div>
+            </section>
+
+            <section class="v4-below hv-wrap">
+                <p class="v4-below__title">Lorem ipsum dolor</p>
+                <div class="home-gallery">
+                    <article class="cabinets">
+                        <a href="cabinets.html">
+                            <h2>CABINETS</h2>
+                            <div class="img-container">
+                                <div class="loading-spinner"></div>
+                                <img src="images/cabinets.png" alt="Modern kitchen with wooden cabinets">
+                            </div>
+                        </a>
+                    </article>
+                    <article class="about">
+                        <a href="about.html">
+                            <h2>ABOUT / ARCHIVE WORK</h2>
+                            <div class="img-container">
+                                <div class="loading-spinner"></div>
+                                <img src="images/about.png" alt="Craftsman working with wood">
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- =====================================================
+             VARIANT 5 — IMMERSIVE MARQUEE  (idea B)
+             Full-bleed auto-scrolling furniture reel over a muted
+             video texture; categories demoted to a slim nav.
+             ===================================================== -->
+        <div class="home-variant" data-variant="v5">
+            <section class="v5-stage">
+                <video class="v5-stage__bg" data-autoloop="true" muted loop playsinline preload="auto" poster="movies/furniture-poster.jpg">
+                    <source src="movies/furniture.mp4" type="video/mp4">
+                    <source src="movies/furniture.mov" type="video/quicktime">
+                </video>
+
+                <div class="v5-stage__head">
+                    <p class="hv-eyebrow">Lorem ipsum</p>
+                    <h2 class="hv-section-title">Lorem ipsum dolor sit amet.</h2>
+                    <p class="hv-lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
+                </div>
+
+                <div class="v5-marquee">
+                    <div class="v5-marquee__track">
+                        <!-- set A -->
+                        <a class="v5-marquee__item" href="furniture.html"><img src="images/fine-furniture/butterfly-desk/michael-bock-butterfly-desk.webp" alt="Butterfly Desk"><span class="v5-marquee__cap">Butterfly Desk</span></a>
+                        <a class="v5-marquee__item" href="furniture.html"><img src="images/fine-furniture/maple-rocker/michael-bock-maple-rocking-chair-front.webp" alt="Maple Rocking Chair"><span class="v5-marquee__cap">Maple Rocking Chair</span></a>
+                        <a class="v5-marquee__item" href="furniture.html"><img src="images/fine-furniture/cherry-desk/michael-bock-cherry-desk.webp" alt="Cherry Desk"><span class="v5-marquee__cap">Cherry Desk</span></a>
+                        <a class="v5-marquee__item" href="furniture.html"><img src="images/fine-furniture/koa-rocker/michael-bock-koa-rocking-chair.webp" alt="Koa Rocking Chair"><span class="v5-marquee__cap">Koa Rocking Chair</span></a>
+                        <a class="v5-marquee__item" href="furniture.html"><img src="images/fine-furniture/walnut-rocker/michael-bock-walnut-rocking-chair.webp" alt="Walnut Rocking Chair"><span class="v5-marquee__cap">Walnut Rocking Chair</span></a>
+                        <a class="v5-marquee__item" href="furniture.html"><img src="images/fine-furniture/slab-table/michael-bock-slab-table-finished.webp" alt="Slab Table"><span class="v5-marquee__cap">Slab Table</span></a>
+                        <!-- set B (duplicate for seamless loop) -->
+                        <a class="v5-marquee__item" href="furniture.html" aria-hidden="true" tabindex="-1"><img src="images/fine-furniture/butterfly-desk/michael-bock-butterfly-desk.webp" alt=""><span class="v5-marquee__cap">Butterfly Desk</span></a>
+                        <a class="v5-marquee__item" href="furniture.html" aria-hidden="true" tabindex="-1"><img src="images/fine-furniture/maple-rocker/michael-bock-maple-rocking-chair-front.webp" alt=""><span class="v5-marquee__cap">Maple Rocking Chair</span></a>
+                        <a class="v5-marquee__item" href="furniture.html" aria-hidden="true" tabindex="-1"><img src="images/fine-furniture/cherry-desk/michael-bock-cherry-desk.webp" alt=""><span class="v5-marquee__cap">Cherry Desk</span></a>
+                        <a class="v5-marquee__item" href="furniture.html" aria-hidden="true" tabindex="-1"><img src="images/fine-furniture/koa-rocker/michael-bock-koa-rocking-chair.webp" alt=""><span class="v5-marquee__cap">Koa Rocking Chair</span></a>
+                        <a class="v5-marquee__item" href="furniture.html" aria-hidden="true" tabindex="-1"><img src="images/fine-furniture/walnut-rocker/michael-bock-walnut-rocking-chair.webp" alt=""><span class="v5-marquee__cap">Walnut Rocking Chair</span></a>
+                        <a class="v5-marquee__item" href="furniture.html" aria-hidden="true" tabindex="-1"><img src="images/fine-furniture/slab-table/michael-bock-slab-table-finished.webp" alt=""><span class="v5-marquee__cap">Slab Table</span></a>
                     </div>
-                </a>
-            </article>
-            <article class="about">
-                <a href="about.html">
-                    <h2>ABOUT / ARCHIVE WORK</h2>
-                    <div class="img-container">
-                        <div class="loading-spinner"></div>
-                        <img src="images/about.png" alt="Craftsman working with wood">
-                    </div>
-                </a>
-            </article>
-        </section>
+                </div>
+
+                <div class="v5-stage__cta">
+                    <a class="hv-cta" href="furniture.html">Lorem ipsum dolor</a>
+                </div>
+            </section>
+
+            <nav class="v5-catnav">
+                <a href="cabinets.html">Cabinets</a>
+                <a href="furniture.html">Fine Furniture</a>
+                <a href="about.html">About / Archive Work</a>
+            </nav>
+        </div>
+
     </main>
-    
+
+
+    <!-- =====================================================
+         VARIANT SWITCHER  (5-step slider for the client to browse)
+         ===================================================== -->
+    <div class="variant-switcher">
+        <span class="variant-switcher__caption">Homepage design</span>
+        <div class="variant-slider">
+            <input class="variant-slider__input" type="range" min="1" max="5" step="1" value="1"
+                   aria-label="Homepage design (1 to 5)" list="variant-ticks">
+            <datalist id="variant-ticks">
+                <option value="1"></option>
+                <option value="2"></option>
+                <option value="3"></option>
+                <option value="4"></option>
+                <option value="5"></option>
+            </datalist>
+        </div>
+        <div class="variant-slider__scale">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>
+        </div>
+    </div>
+
+
     <footer>
         <p>&copy; 1989 Michael Bock • Geronimo Woodworks. All rights reserved.</p>
         <div class="footer-icons">
             <a class="footer-icon" target="_blank" rel="noopener" href="https://www.instagram.com/geronimoww2/">
-              <img src="/images/social/intagram-logo.svg" alt="Instagram"></a>    
+              <img src="/images/social/intagram-logo.svg" alt="Instagram"></a>
           </div>
     </footer>
 
-    <script defer src="js/home-spinner.js"></script>  
+    <script defer src="js/home-spinner.js"></script>
+    <script defer src="js/home-variants.js"></script>
 </body>
 </html>
