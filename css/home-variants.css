@@ -364,6 +364,230 @@
 .v3-featured-band { padding: 3rem 0 1rem; }
 .v3-featured-band__head { text-align: center; }
 
+/* --- v3 header: three-page menu with Instagram at the right -------------- */
+
+/* v3 supplies its own header, so hide the shared global one while active. */
+body.variant-v3 > header,
+body.variant-v3 > nav { display: none; }
+
+.v3-header {
+    position: sticky;
+    top: 0;
+    z-index: 14000;              /* above content, below the intro (15000) so
+                                    the header stays hidden during the intro */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 18px clamp(1rem, 4vw, 2.5rem) 18px 1rem;
+    background: #ffffff;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.v3-header__brand {
+    display: flex;
+    align-items: baseline;
+    line-height: 1.15;
+    text-decoration: none;
+    /* Match the original global header brand (header h1). */
+    color: #666666;
+    font-family: 'Lato', 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    flex: 0 0 auto;                 /* never shrink the brand */
+}
+.v3-header__brand .top-line { margin-right: 0.4em; }
+.v3-header__brand .circle { color: rgba(32, 53, 127, 0.76); margin: 0 0.15em; }
+
+/* At 800px and below: shrink the brand, drop the dot, and stack the two
+   lines (matching the old responsive header). */
+@media (max-width: 800px) {
+    .v3-header__brand {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-size: 22px;
+        line-height: 1.2;
+    }
+    .v3-header__brand .top-line { margin-right: 0; }
+    .v3-header__brand .circle { display: none; }
+
+    /* Center the brand within the header; float the hamburger to the right
+       so it doesn't push the brand off-center. */
+    .v3-header { position: relative; justify-content: center; }
+    .v3-header__brand { flex: 0 1 auto; }
+    .v3-header .v3-nav-toggle {
+        position: absolute;
+        top: 50%;
+        right: clamp(1rem, 4vw, 2.5rem);
+        transform: translateY(-50%);
+    }
+}
+
+/* Desktop nav: links + Instagram pushed to the right of the brand. */
+.v3-nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-left: auto;              /* push the whole group to the right */
+}
+.v3-nav__links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.v3-nav__links a {
+    position: relative;
+    text-decoration: none;
+    color: #2a2a2a;
+    font-family: 'Raleway', 'Lato', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    padding: 4px 0;
+    transition: color 0.2s ease;
+}
+/* Animated underline on hover / current page. */
+.v3-nav__links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+}
+.v3-nav__links a:hover,
+.v3-nav__links a[aria-current="page"] { color: #14110d; }
+.v3-nav__links a:hover::after,
+.v3-nav__links a[aria-current="page"]::after { transform: scaleX(1); }
+
+.v3-nav__ig {
+    display: inline-flex;
+    align-items: center;
+    opacity: 0.75;
+    transition: opacity 0.2s ease;
+}
+.v3-nav__ig:hover { opacity: 1; }
+.v3-nav__ig img { width: 22px; height: 22px; display: block; }
+
+/* Hamburger — hidden on desktop, shown once the links get tight. */
+.v3-nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 44px;
+    height: 44px;
+    margin-left: auto;              /* sits at the far right on mobile */
+    padding: 0;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+.v3-nav-toggle__bar {
+    display: block;
+    width: 26px;
+    height: 2px;
+    margin: 0 auto;
+    background: #2a2a2a;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+/* Close (X) button — only visible inside the mobile drawer. */
+.v3-nav-close {
+    display: none;
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    line-height: 1;
+    font-size: 32px;
+    font-weight: 300;
+    color: #2a2a2a;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+/* Backdrop behind the open drawer (created by JS). */
+.v3-nav-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 16040;
+}
+.v3-nav-backdrop.is-open { opacity: 1; pointer-events: auto; }
+
+/* Collapse to the hamburger at this breakpoint. */
+@media (max-width: 1200px) {
+    .v3-nav-toggle { display: flex; }
+    .v3-nav-close { display: block; }
+
+    .v3-nav {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: auto;
+        width: min(80vw, 320px);
+        height: 100%;
+        margin: 0;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 1.6rem;
+        padding: 92px 2rem 2rem;
+        background: #ffffff;            /* solid, opaque panel */
+        box-shadow: -8px 0 28px rgba(0,0,0,0.18);
+        transform: translateX(100%);
+        z-index: 16050;
+        /* Keep the drawer hidden until JS marks the header ready, so it can't
+           flash open (as an inline row) before CSS/JS have positioned it. */
+        visibility: hidden;
+    }
+    /* Reveal + animate only once ready. */
+    .v3-header.is-ready .v3-nav { visibility: visible; transition: transform 0.32s ease; }
+    .v3-nav.is-open { transform: translateX(0); }
+
+    .v3-nav__links {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.6rem;
+        width: 100%;
+    }
+    .v3-nav__links a { font-size: 1.05rem; }
+    .v3-nav__ig { margin-top: 0.5rem; }
+
+    /* Hamburger → X when open. */
+    .v3-nav-toggle.is-open .v3-nav-toggle__bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .v3-nav-toggle.is-open .v3-nav-toggle__bar:nth-child(2) { opacity: 0; }
+    .v3-nav-toggle.is-open .v3-nav-toggle__bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+}
+
+/* Single category card (Cabinets removed from the v3 bottom pair). */
+.home-gallery--single { justify-content: center; }
+@media (min-width: 769px) {
+    .home-gallery--single article { flex-basis: min(100%, 560px); margin-bottom: 0; }
+    .home-gallery--single .img-container { aspect-ratio: 16 / 9; }
+    .home-gallery--single .img-container img { width: 100%; height: 100%; object-fit: cover; }
+}
+
 /* ======================================================================
    V4 — SPLIT HERO (idea A: video/image + editorial rail)
    ====================================================================== */

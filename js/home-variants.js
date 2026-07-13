@@ -65,8 +65,53 @@
         save(id);
         syncVideos(activeEl);
 
-        if (id === 'v3') runIntro(activeEl, opts.replayIntro !== false);
+        // v3 ships its own header/menu; flag the body so the shared global
+        // header/nav are hidden only while v3 is the active variant.
+        document.body.classList.toggle('variant-v3', id === 'v3');
+
+        if (id === 'v3') { runIntro(activeEl, opts.replayIntro !== false); initV3Nav(activeEl); }
         window.scrollTo({ top: 0, behavior: 'auto' });
+    }
+
+    /* ---- V3 header menu (mobile hamburger drawer) ---- */
+    function initV3Nav(v3El) {
+        var toggle = v3El.querySelector('.v3-nav-toggle');
+        var nav = v3El.querySelector('.v3-nav');
+        if (!toggle || !nav || toggle.dataset.bound) return;
+        toggle.dataset.bound = '1';
+
+        // Backdrop that sits behind the open drawer and closes it on tap.
+        var header = v3El.querySelector('.v3-header');
+        var backdrop = document.createElement('div');
+        backdrop.className = 'v3-nav-backdrop';
+        header.appendChild(backdrop);
+
+        // Enable the drawer's slide transition only after first paint, so it
+        // snaps closed initially instead of flashing open then sliding shut.
+        requestAnimationFrame(function () {
+            requestAnimationFrame(function () { header.classList.add('is-ready'); });
+        });
+
+        function setOpen(open) {
+            toggle.classList.toggle('is-open', open);
+            nav.classList.toggle('is-open', open);
+            backdrop.classList.toggle('is-open', open);
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+
+        toggle.addEventListener('click', function () {
+            setOpen(!nav.classList.contains('is-open'));
+        });
+        backdrop.addEventListener('click', function () { setOpen(false); });
+        var closeBtn = nav.querySelector('.v3-nav-close');
+        if (closeBtn) closeBtn.addEventListener('click', function () { setOpen(false); });
+        // Close after choosing a destination or pressing Escape.
+        nav.addEventListener('click', function (e) {
+            if (e.target.closest('a')) setOpen(false);
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') setOpen(false);
+        });
     }
 
     /* ---- V3 cinematic intro ---- */
