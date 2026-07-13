@@ -174,33 +174,60 @@
     transition: transform 0.6s ease;
 }
 .feature-card:hover .feature-card__img img { transform: scale(1.04); }
-.feature-card__rank {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.92);
-    color: var(--hv-accent);
-    font-size: 0.9rem;
+
+/* Editorial caption: a large light numeral sits beside the title,
+   separated by a hairline rule — no floating badge on the photo. */
+.feature-card__caption {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: baseline;
+    gap: 0.85rem;
+    margin-top: 0.9rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid #e7e2d8;
 }
+.feature-card__num {
+    font-size: 1.55rem;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--hv-accent);
+    letter-spacing: 0.02em;
+    font-variant-numeric: tabular-nums;
+    flex: 0 0 auto;
+}
+.feature-card__text { display: flex; flex-direction: column; }
 .feature-card__name {
-    margin: 0.7rem 0 0;
     font-weight: 300;
     font-size: 1.02rem;
     color: var(--hv-ink);
 }
 .feature-card__meta {
-    margin: 0.15rem 0 0;
+    margin-top: 0.15rem;
     font-size: 0.8rem;
     color: #9a9a9a;
 }
 @media (max-width: 760px) {
     .feature-grid { grid-template-columns: 1fr; gap: 1.1rem; }
+}
+
+/* Two-item "Also from the Studio" rows (V3 + V4): let each item grow
+   wider to fill the space, but cap the height so they don't get too tall. */
+@media (min-width: 769px) {
+    .home-gallery--pair {
+        justify-content: center;
+        gap: 2rem;
+    }
+    .home-gallery--pair article {
+        flex-basis: calc(50% - 1rem);
+        margin-bottom: 0;
+    }
+    .home-gallery--pair .img-container {
+        aspect-ratio: 5 / 6;
+    }
+    .home-gallery--pair .img-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
 }
 
 /* ======================================================================
@@ -222,6 +249,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 2%;
 }
 .v2-hero::after {
     content: "";
