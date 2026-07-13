@@ -413,7 +413,10 @@ footer {
 /* Tomasi-inspired project reel style (scoped to cabinetry page) */
 .project-reel-page {
     --reel-side-padding: 0px;
-    --reel-height: clamp(210px, 33vw, 360px);
+    /* Fill most of the viewport height so only a sliver of the next
+       gallery-group peeks in below the current one. Accounts for the
+       sticky header (~90px), caption, and inter-group margin. */
+    --reel-height: clamp(300px, calc(100vh - 240px), 800px);
     --reel-gap: 0px;
     color: #1d1d1d;
     background-color: #ffffff;
@@ -553,7 +556,7 @@ footer {
 @media (max-width: 900px) {
     .project-reel-page {
         --reel-side-padding: 0px;
-        --reel-height: clamp(170px, 35vw, 290px);
+        --reel-height: clamp(240px, calc(100vh - 240px), 560px);
         --reel-gap: 0px;
     }
 
@@ -581,7 +584,7 @@ footer {
 
 @media (max-width: 620px) {
     .project-reel-page {
-        --reel-height: clamp(220px, 58vw, 340px);
+        --reel-height: clamp(220px, calc(100vh - 200px), 480px);
         --reel-gap: 14px;
     }
 
