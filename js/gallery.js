@@ -40,6 +40,9 @@ function buildTripleTrack(scroll, originalItems, onImageReady) {
     // IntersectionObserver in improved-image-loading.js, and fade each image in
     // the moment it actually decodes to avoid white flashes mid-scroll.
     [...copy1, ...originalItems, ...copy3].forEach(wrapper => {
+        // Start each wrapper un-revealed so the spinner shows; reveal() below
+        // clears it once the image is actually decoded.
+        wrapper.classList.remove('loaded');
         wrapper.querySelectorAll('img').forEach(img => {
             img.loading = 'eager';
             const reveal = () => {

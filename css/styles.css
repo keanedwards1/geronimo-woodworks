@@ -457,6 +457,17 @@ footer {
     aspect-ratio: auto;
     border-radius: 0;
     background-color: transparent;
+    /* Before the image decodes the wrapper has no natural width, so reserve a
+       slot to give the loading spinner something to center inside. Once the
+       image loads (.loaded) this min-width is dropped and the wrapper collapses
+       to the image's natural width. */
+    min-width: calc(var(--reel-height) * 0.7);
+    background-color: #f4f4f4;
+}
+
+.project-reel-page .gallery-item-wrapper.loaded {
+    min-width: 0;
+    background-color: transparent;
 }
 
 .project-reel-page .gallery-item {
@@ -467,6 +478,10 @@ footer {
 }
 
 .project-reel-page .loading-spinner {
+    display: block;
+}
+
+.project-reel-page .gallery-item-wrapper.loaded .loading-spinner {
     display: none;
 }
 
