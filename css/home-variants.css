@@ -597,15 +597,19 @@ body.v3-nav-lock { overflow: hidden; }
         z-index: 16050;
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
-        /* Keep the drawer hidden until JS marks the header ready, so it can't
-           flash open (as an inline row) before CSS/JS have positioned it. */
+        /* No transition by default: this way the drawer never animates when it
+           first appears or when the window is resized into this breakpoint —
+           it simply sits off-screen right. The slide is enabled by JS only
+           after the first real open (see .v3-nav--animated below), so a
+           resize can't make it look like it's "closing" on arrival. */
+        transition: none;
+        /* Hidden until JS marks the header ready, so it can't flash open (as
+           an inline row) before CSS/JS have positioned it. */
         visibility: hidden;
     }
-    /* Reveal + animate only once ready. Custom easing = a soft, weighted slide. */
-    .v3-header.is-ready .v3-nav {
-        visibility: visible;
-        transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
-    }
+    .v3-header.is-ready .v3-nav { visibility: visible; }
+    /* Enabled by JS on first open — the soft, weighted slide. */
+    .v3-nav--animated { transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1); }
     .v3-nav.is-open { transform: translateX(0); }
 
     /* Small kicker at the top of the drawer. */
@@ -696,7 +700,7 @@ body.v3-nav-lock { overflow: hidden; }
 
 /* Honor reduced-motion: no slide/stagger, just an instant, legible drawer. */
 @media (max-width: 1200px) and (prefers-reduced-motion: reduce) {
-    .v3-header.is-ready .v3-nav { transition: none; }
+    .v3-nav--animated { transition: none; }
     .v3-nav__links a { transition: color 0.2s ease; opacity: 1; transform: none; }
     .v3-nav.is-open .v3-nav__links a { transition-delay: 0s; }
 }

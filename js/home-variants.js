@@ -98,13 +98,18 @@
         backdrop.className = 'v3-nav-backdrop';
         header.appendChild(backdrop);
 
-        // Enable the drawer's slide transition only after first paint, so it
-        // snaps closed initially instead of flashing open then sliding shut.
+        // Reveal the drawer (visibility) only after JS has run and positioned
+        // it, so it can't flash as an inline row before CSS/JS take over. The
+        // slide transition itself is enabled separately, on first open.
         requestAnimationFrame(function () {
             requestAnimationFrame(function () { header.classList.add('is-ready'); });
         });
 
         function setOpen(open) {
+            // Enable the slide transition on the first real open, so the drawer
+            // never animates when it first appears or on a window resize into
+            // the mobile breakpoint (it just sits off-screen until tapped).
+            if (open) nav.classList.add('v3-nav--animated');
             toggle.classList.toggle('is-open', open);
             nav.classList.toggle('is-open', open);
             backdrop.classList.toggle('is-open', open);
