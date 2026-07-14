@@ -44,6 +44,48 @@ body {
     margin: 0 0;
 }
 
+/* Make the #about section fill the first screen and keep the intro block
+   centered (unchanged flex-row centering). The "Read More" scroll cue is then
+   pinned near the bottom of the viewport — reading clearly as "there's more
+   below, keep scrolling." Absolute positioning lets the cue drop to the bottom
+   without disturbing the intro's centering. (.snap-section is position:relative.) */
+#about.about-section {
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+.about-scroll-cue {
+    position: absolute;
+    left: 50%;
+    bottom: 5.5rem;            /* sit up from the very bottom, not too low */
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Neutralise the shared arrow's bottom margin here — the wrapper handles
+   spacing, and we want the cue to read as a tight unit. */
+.about-scroll-cue .v2-categories__arrow { margin-bottom: 0; }
+
+/* On phones the stacked intro can approach the section height, so absolute
+   positioning risks the cue overlapping the content or getting clipped by the
+   container's overflow:hidden. Let it flow normally below the content instead
+   — still centered, just guaranteed to stay inside the section. */
+@media (max-width: 768px) {
+    #about.about-section {
+        flex-direction: column;
+        /* Grow to fit content + cue instead of a fixed 100vh that could clip
+           the cue under the container's overflow:hidden. */
+        height: auto;
+        min-height: 100vh;
+        padding-bottom: 2rem;
+    }
+    .about-scroll-cue {
+        position: static;
+        transform: none;
+        margin: 1.5rem auto 0;
+    }
+}
+
 .series-container {
     margin: 20px 0;
 }

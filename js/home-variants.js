@@ -169,9 +169,11 @@
             if (pr && pr.catch) pr.catch(function () { /* autoplay blocked */ });
             video.onended = finish;
         }
-        // Safety timeout so the site is always revealed even if autoplay
-        // is blocked or the video stalls.
-        introTimer = window.setTimeout(finish, 9000);
+        // Safety timeout so the site is always revealed even if autoplay is
+        // blocked or the video stalls. Set comfortably past the clip length
+        // (~25.7s) so the video plays in full — normally `onended` dismisses
+        // it first, and this only fires as a genuine fallback.
+        introTimer = window.setTimeout(finish, 28000);
 
         var skip = intro.querySelector('.v3-intro__skip');
         if (skip) skip.onclick = finish;

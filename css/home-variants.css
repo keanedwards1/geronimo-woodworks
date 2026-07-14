@@ -386,7 +386,13 @@
 body.variant-v3 > header,
 body.variant-v3 > nav { display: none; }
 
+/* Full-width white header bar. The bar itself spans the whole viewport while
+   its content (brand + links) stays aligned to a centred 1200px column via
+   auto side-padding. box-sizing keeps padding inside the width so it never
+   overflows; body overflow-x:hidden (below) is the belt-and-braces guard for
+   the homepage's viewport breakout. */
 .v3-header {
+    box-sizing: border-box;
     position: sticky;
     top: 0;
     z-index: 14000;              /* above content, below the intro (15000) so
@@ -395,9 +401,52 @@ body.variant-v3 > nav { display: none; }
     align-items: center;
     justify-content: space-between;
     gap: 3.5rem;
-    padding: 18px clamp(1rem, 4vw, 2.5rem) 18px 1rem;
+    width: 100%;
+    /* Centre content to a 1200px column: 2rem gutter, growing to auto side
+       space on wider screens. Based on 50vw (the viewport) rather than 100%,
+       so it resolves identically whether the header's containing block is
+       <body> (interior pages) or the 1200px <main> (homepage). */
+    padding: 18px max(2rem, calc(50vw - 600px + 2rem));
     background: #ffffff;
     border-bottom: 1px solid #f0f0f0;
+    text-align: left;            /* reset legacy `header { text-align:center }` */
+}
+/* On the homepage the header sits inside <main> (max-width:1200px; centred),
+   so break it out to the full viewport. 100vw + this negative margin is the
+   standard full-bleed trick; the body overflow-x guard below neutralises the
+   scrollbar-width overshoot that would otherwise cause a sideways scroll. */
+body.variant-v3 .v3-header,
+main .v3-header {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+}
+/* Guard: no element (incl. the 100vw breakout) may scroll the page sideways.
+   overflow-x:clip (not hidden) avoids turning body into a scroll container,
+   which would otherwise break position:sticky on the header. */
+html, body { overflow-x: clip; }
+/* Smoothly transition into the scrolled/glassy state on the interior pages. */
+.v3-header { transition: padding 0.3s ease, background 0.3s ease,
+                         box-shadow 0.3s ease, backdrop-filter 0.3s ease,
+                         border-color 0.3s ease; }
+
+/* Once scrolled (sticky-header.js adds `.scrolled` past ~64px), the interior
+   header goes compact and glassy: a translucent, frosted, see-through bar that
+   lets the gallery content show softly through it. Overrides the legacy
+   `header.scrolled` padding change too. */
+.v3-header.scrolled {
+    padding-top: 11px;
+    padding-bottom: 11px;
+    background: rgba(255, 255, 255, 0.55);
+    -webkit-backdrop-filter: saturate(160%) blur(14px);
+    backdrop-filter: saturate(160%) blur(14px);
+    border-bottom-color: rgba(20, 17, 13, 0.06);
+    box-shadow: 0 6px 26px rgba(20, 17, 13, 0.08);
+}
+/* Browsers without backdrop-filter: fall back to a more opaque bar so text
+   stays legible instead of showing raw content through a 55% white. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .v3-header.scrolled { background: rgba(255, 255, 255, 0.94); }
 }
 
 .v3-header__brand {
