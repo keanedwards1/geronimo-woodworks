@@ -6,6 +6,18 @@
     'use strict';
 
     var STORAGE_KEY = 'hv-active-variant';
+    // Session flag so the V3 cinematic intro plays only once per visit:
+    // sessionStorage survives in-site navigation but clears when the tab/
+    // browser closes, so a returning visitor sees it fresh next time.
+    var INTRO_SEEN_KEY = 'hv-v3-intro-seen';
+    function introSeen() {
+        try { return window.sessionStorage.getItem(INTRO_SEEN_KEY) === '1'; }
+        catch (e) { return false; }
+    }
+    function markIntroSeen() {
+        try { window.sessionStorage.setItem(INTRO_SEEN_KEY, '1'); }
+        catch (e) { /* ignore */ }
+    }
     var variants = Array.prototype.slice.call(
         document.querySelectorAll('.home-variant')
     );
@@ -97,6 +109,16 @@
             nav.classList.toggle('is-open', open);
             backdrop.classList.toggle('is-open', open);
             toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            // Lock the page behind the drawer so only the menu scrolls.
+            document.body.classList.toggle('v3-nav-lock', open);
+            // Move focus into the drawer on open (to the close button) and
+            // back to the hamburger on close, for keyboard/AT users.
+            if (open) {
+                var first = nav.querySelector('.v3-nav-close');
+                if (first) first.focus();
+            } else {
+                toggle.focus();
+            }
         }
 
         toggle.addEventListener('click', function () {
@@ -133,6 +155,9 @@
         intro.classList.remove('is-hiding', 'is-done');
         if (!doRun) { intro.classList.add('is-done'); return; }
 
+        // Remember that the intro has played for this visit.
+        markIntroSeen();
+
         if (video) {
             video.currentTime = 0;
             var pr = video.play();
@@ -164,5 +189,8 @@
         if (m) urlVariant = m[1].toLowerCase();
     } catch (e) { /* ignore */ }
     var initial = urlVariant || getSaved() || variants[0].getAttribute('data-variant');
-    activate(initial, { replayIntro: true });
+    // Play the intro on the first visit of a session; skip it on reloads and
+    // in-site returns. An explicit ?home=v3 override always replays it.
+    var playIntro = !!urlVariant || !introSeen();
+    activate(initial, { replayIntro: playIntro });
 })();

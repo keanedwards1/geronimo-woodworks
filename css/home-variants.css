@@ -287,7 +287,23 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     font-size: 0.8rem;
-    margin: 0 0 1.4rem;
+    margin: 0 0 0.6rem;
+}
+.v2-categories__arrow {
+    display: block;
+    margin: 0 auto 1.4rem;
+    width: 13px;
+    color: var(--hv-muted);
+    opacity: 0.65;
+    animation: v2-arrow-drift 2.6s ease-in-out infinite;
+}
+.v2-categories__arrow svg { display: block; }
+@keyframes v2-arrow-drift {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(4px); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .v2-categories__arrow { animation: none; }
 }
 
 /* ======================================================================
@@ -454,6 +470,11 @@ body.variant-v3 > nav { display: none; }
     padding: 4px 0;
     transition: color 0.2s ease;
 }
+/* The index number + eyebrow + footer label are drawer-only chrome; hide
+   them in the desktop inline nav. */
+.v3-nav__index,
+.v3-nav__eyebrow,
+.v3-nav__footer span { display: none; }
 /* Animated underline on hover / current page. */
 .v3-nav__links a::after {
     content: '';
@@ -472,10 +493,14 @@ body.variant-v3 > nav { display: none; }
 .v3-nav__links a:hover::after,
 .v3-nav__links a[aria-current="page"]::after { transform: scaleX(1); }
 
+/* On desktop the footer is transparent — the IG icon sits inline in the row. */
+.v3-nav__footer { display: inline-flex; align-items: center; }
 .v3-nav__ig {
     display: inline-flex;
     align-items: center;
+    gap: 0.6rem;
     opacity: 0.75;
+    text-decoration: none;
     transition: opacity 0.2s ease;
 }
 .v3-nav__ig:hover { opacity: 1; }
@@ -504,23 +529,32 @@ body.variant-v3 > nav { display: none; }
     transition: transform 0.3s ease, opacity 0.2s ease;
 }
 
-/* Close (X) button — only visible inside the mobile drawer. */
+/* Close (X) button — only visible inside the mobile drawer. Built from two
+   crossed hairlines rather than a font glyph, so it matches the hamburger. */
 .v3-nav-close {
     display: none;
     position: absolute;
-    top: 18px;
+    top: 22px;
     right: 20px;
     width: 40px;
     height: 40px;
     padding: 0;
-    line-height: 1;
-    font-size: 32px;
-    font-weight: 300;
-    color: #2a2a2a;
     background: none;
     border: 0;
     cursor: pointer;
 }
+.v3-nav-close span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 1.5px;
+    background: #2a2a2a;
+    transition: background 0.2s ease;
+}
+.v3-nav-close span:nth-child(1) { transform: translate(-50%, -50%) rotate(45deg); }
+.v3-nav-close span:nth-child(2) { transform: translate(-50%, -50%) rotate(-45deg); }
+.v3-nav-close:hover span { background: #8a6a3a; }
 
 /* Backdrop behind the open drawer (created by JS). */
 .v3-nav-backdrop {
@@ -534,6 +568,9 @@ body.variant-v3 > nav { display: none; }
 }
 .v3-nav-backdrop.is-open { opacity: 1; pointer-events: auto; }
 
+/* Lock body scroll while the drawer is open. */
+body.v3-nav-lock { overflow: hidden; }
+
 /* Collapse to the hamburger at this breakpoint. */
 @media (max-width: 1200px) {
     .v3-nav-toggle { display: flex; }
@@ -545,39 +582,123 @@ body.variant-v3 > nav { display: none; }
         right: 0;
         bottom: 0;
         left: auto;
-        width: min(80vw, 320px);
+        width: min(86vw, 360px);
         height: 100%;
         margin: 0;
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
         justify-content: flex-start;
-        gap: 1.6rem;
-        padding: 92px 2rem 2rem;
-        background: #ffffff;            /* solid, opaque panel */
-        box-shadow: -8px 0 28px rgba(0,0,0,0.18);
+        gap: 0;
+        padding: 5.5rem 2.25rem 2.25rem;
+        background: #fbfaf7;            /* warm off-white, matches the site */
+        box-shadow: -18px 0 48px rgba(20, 17, 13, 0.16);
         transform: translateX(100%);
         z-index: 16050;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
         /* Keep the drawer hidden until JS marks the header ready, so it can't
            flash open (as an inline row) before CSS/JS have positioned it. */
         visibility: hidden;
     }
-    /* Reveal + animate only once ready. */
-    .v3-header.is-ready .v3-nav { visibility: visible; transition: transform 0.32s ease; }
+    /* Reveal + animate only once ready. Custom easing = a soft, weighted slide. */
+    .v3-header.is-ready .v3-nav {
+        visibility: visible;
+        transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1);
+    }
     .v3-nav.is-open { transform: translateX(0); }
+
+    /* Small kicker at the top of the drawer. */
+    .v3-nav__eyebrow {
+        display: block;
+        margin: 0 0 1.75rem;
+        font-family: 'Raleway', 'Lato', sans-serif;
+        font-size: 0.62rem;
+        font-weight: 600;
+        letter-spacing: 0.32em;
+        text-transform: uppercase;
+        color: #b0a894;
+    }
 
     .v3-nav__links {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 1.6rem;
+        align-items: stretch;
+        gap: 0;
         width: 100%;
     }
-    .v3-nav__links a { font-size: 1.05rem; }
-    .v3-nav__ig { margin-top: 0.5rem; }
+    .v3-nav__links li { width: 100%; }
+
+    /* Big, numbered, divided rows. */
+    .v3-nav__links a {
+        display: flex;
+        align-items: baseline;
+        gap: 0.85rem;
+        padding: 1.05rem 0;
+        border-bottom: 1px solid rgba(20, 17, 13, 0.08);
+        font-size: 1.35rem;
+        font-weight: 300;
+        letter-spacing: 0.01em;
+        text-transform: none;
+        color: #1c1913;
+        /* Each row starts slightly lowered + transparent, then settles in
+           when the drawer opens (staggered below). */
+        opacity: 0;
+        transform: translateX(14px);
+        transition: opacity 0.4s ease, transform 0.4s ease, color 0.2s ease;
+    }
+    .v3-nav__links li:first-child a { border-top: 1px solid rgba(20, 17, 13, 0.08); }
+    .v3-nav__links a::after { display: none; }   /* drop the desktop underline */
+
+    .v3-nav__index {
+        display: block;
+        font-family: 'Raleway', 'Lato', sans-serif;
+        font-size: 0.62rem;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        color: #b8895a;
+        transform: translateY(-0.35em);   /* superscript feel */
+    }
+    .v3-nav__label { display: block; }
+
+    .v3-nav__links a:hover .v3-nav__label,
+    .v3-nav__links a:active .v3-nav__label { color: #8a6a3a; }
+
+    /* Staggered reveal once the drawer is open. */
+    .v3-nav.is-open .v3-nav__links a { opacity: 1; transform: translateX(0); }
+    .v3-nav.is-open .v3-nav__links li:nth-child(1) a { transition-delay: 0.10s; }
+    .v3-nav.is-open .v3-nav__links li:nth-child(2) a { transition-delay: 0.17s; }
+    .v3-nav.is-open .v3-nav__links li:nth-child(3) a { transition-delay: 0.24s; }
+
+    /* Footer: pinned to the bottom of the drawer with the IG link + label. */
+    .v3-nav__footer {
+        display: flex;
+        margin-top: auto;
+        padding-top: 2rem;
+    }
+    .v3-nav__footer span {
+        display: inline;
+        font-family: 'Raleway', 'Lato', sans-serif;
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #6a6357;
+    }
+    .v3-nav__ig { gap: 0.7rem; opacity: 1; }
+    .v3-nav__ig img { width: 20px; height: 20px; }
+    .v3-nav__ig:hover span { color: #1c1913; }
 
     /* Hamburger → X when open. */
     .v3-nav-toggle.is-open .v3-nav-toggle__bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
     .v3-nav-toggle.is-open .v3-nav-toggle__bar:nth-child(2) { opacity: 0; }
     .v3-nav-toggle.is-open .v3-nav-toggle__bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+}
+
+/* Honor reduced-motion: no slide/stagger, just an instant, legible drawer. */
+@media (max-width: 1200px) and (prefers-reduced-motion: reduce) {
+    .v3-header.is-ready .v3-nav { transition: none; }
+    .v3-nav__links a { transition: color 0.2s ease; opacity: 1; transform: none; }
+    .v3-nav.is-open .v3-nav__links a { transition-delay: 0s; }
 }
 
 /* Single category card (Cabinets removed from the v3 bottom pair). */
