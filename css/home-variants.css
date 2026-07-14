@@ -473,7 +473,9 @@ html, body { overflow-x: clip; }
         flex-direction: column;
         align-items: center;
         text-align: center;
-        font-size: 22px;
+        /* Fluid size so the long "GERONIMO WOODWORKS" line always fits within
+           the space left beside the hamburger, down to small phones. */
+        font-size: clamp(15px, 5.2vw, 22px);
         line-height: 1.2;
     }
     .v3-header__brand .top-line { margin-right: 0; }
@@ -482,7 +484,14 @@ html, body { overflow-x: clip; }
     /* Center the brand within the header; float the hamburger to the right
        so it doesn't push the brand off-center. */
     .v3-header { position: relative; justify-content: center; }
-    .v3-header__brand { flex: 0 1 auto; }
+    /* Reserve room for the hamburger on both sides so the centered brand can
+       never slide underneath it. The gutter = toggle width (44px) + its right
+       offset + a little breathing space; applied symmetrically to keep the
+       brand optically centered. */
+    .v3-header__brand {
+        flex: 0 1 auto;
+        max-width: calc(100% - 2 * (44px + clamp(1rem, 4vw, 2.5rem) + 0.75rem));
+    }
     .v3-header .v3-nav-toggle {
         position: absolute;
         top: 50%;
